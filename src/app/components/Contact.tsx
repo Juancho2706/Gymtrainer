@@ -4,30 +4,39 @@ import FadeIn from './FadeIn';
 
 const Contact = () => {
     return (
-        <section id="contact" className="py-24 bg-gradient-to-bl from-red-900 via-neutral-900 to-black text-white text-center relative overflow-hidden">
-            {/* Background texture/glow */}
-            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.05),_transparent)] pointer-events-none" />
+        <section id="contact" className="py-32 bg-black relative overflow-hidden">
+            {/* Skewed Background Element */}
+            <div className="absolute inset-0 bg-red-900/10 skew-y-3 transform origin-bottom-right z-0"></div>
 
-            <div className="container mx-auto px-4 relative z-10">
+            <div className="container mx-auto px-4 relative z-10 text-center">
                 <FadeIn>
-                    <h2 className="heading-hero mb-6">¿Listo para <span className="text-red-500">Comprometerte?</span></h2>
+                    <h2 className="heading-hero mb-8"><span className="text-stroke">¿LISTO?</span> <br /><span className="text-white">ÚNETE HOY</span></h2>
                 </FadeIn>
+
                 <FadeIn delay={0.2}>
-                    <p className="text-xl mb-12 max-w-2xl mx-auto font-light text-gray-300">
-                        Las plazas son limitadas. Solo trabajo con aquellos dispuestos a dejarlo todo en el entrenamiento.
+                    <p className="text-xl mb-12 max-w-2xl mx-auto font-light text-gray-400">
+                        No hay atajos. Solo trabajo duro y resultados. Si estás listo para sufrir por tu gloria, bienvenido.
                     </p>
                 </FadeIn>
+
                 <FadeIn delay={0.4}>
-                    <form className="max-w-md mx-auto space-y-4">
-                        <input
-                            type="email"
-                            placeholder="Tu correo electrónico"
-                            className="w-full px-6 py-4 bg-black/50 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 font-bold uppercase tracking-wider transition-all"
-                        />
-                        <button className="w-full py-4 bg-red-600 text-white hover:bg-red-700 hover:shadow-[0_0_20px_rgba(220,38,38,0.4)] transition-all duration-300 font-bold uppercase tracking-widest text-lg transform hover:-translate-y-1">
-                            Empezar Ahora
-                        </button>
-                    </form>
+                    <div className="max-w-md mx-auto relative group">
+                        <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-900 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+                        <form className="relative bg-neutral-900 p-8 rounded-lg border border-white/10">
+                            <div className="space-y-6">
+                                <div>
+                                    <input
+                                        type="email"
+                                        placeholder="TU CORREO ELECTRÓNICO"
+                                        className="w-full px-6 py-4 bg-black border border-white/10 text-white placeholder-neutral-600 focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 font-bold uppercase tracking-wider text-sm transition-all text-center"
+                                    />
+                                </div>
+                                <button className="w-full py-5 bg-red-600 text-white hover:bg-red-700 hover:shadow-[0_0_30px_rgba(220,38,38,0.5)] transition-all duration-300 font-bold uppercase tracking-widest text-lg skew-x-[-10deg]">
+                                    <span className="skew-x-[10deg] inline-block">Empezar Ahora</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </FadeIn>
             </div>
         </section>

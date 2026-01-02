@@ -5,8 +5,10 @@
 :root {
   --background: #000000;
   --foreground: #ffffff;
-  --primary: #dc2626; /* red-600 */
-  --secondary: #171717; /* neutral-900 */
+  --primary: #dc2626;
+  /* red-600 */
+  --secondary: #171717;
+  /* neutral-900 */
 }
 
 @layer base {
@@ -20,13 +22,94 @@
   .btn-primary {
     @apply px-8 py-3 bg-red-600 hover:bg-white hover:text-red-700 text-white font-bold uppercase tracking-wider transition-all duration-300 transform hover:scale-105;
   }
+
   .btn-secondary {
     @apply px-8 py-3 bg-transparent border-2 border-white hover:bg-white hover:text-black text-white font-bold uppercase tracking-wider transition-all duration-300;
   }
+
   .heading-hero {
-    @apply font-black text-5xl md:text-7xl lg:text-8xl tracking-tighter uppercase;
+    @apply font-black text-5xl md:text-7xl lg:text-9xl tracking-tighter uppercase;
   }
+
   .section-padding {
-    @apply py-20 px-4 md:px-8;
+    @apply py-24 px-4 md:px-8;
   }
+
+  /* TEXT STROKE UTILITY */
+  .text-stroke {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+    color: transparent;
+  }
+
+  .text-stroke-red {
+    -webkit-text-stroke: 1px rgba(220, 38, 38, 0.5);
+    color: transparent;
+  }
+}
+
+/* ANIMATIONS */
+@keyframes ken-burns {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+
+  50% {
+    transform: scale(1.1) translate(-1%, -1%);
+  }
+
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+.animate-ken-burns {
+  animation: ken-burns 30s ease-in-out infinite alternate;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(220, 38, 38, 0.6);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s infinite;
 }
