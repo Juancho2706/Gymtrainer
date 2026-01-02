@@ -13,8 +13,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Apex Trainer | Rendimiento de Élite",
-  description: "Transforma tu cuerpo y mente con entrenamiento personal de élite.",
+  title: "Olympus Wolf | Rendimiento de Élite",
+  description: "Transforma tu cuerpo y mente con la metodología del lobo.",
 };
 
 export default function RootLayout({
