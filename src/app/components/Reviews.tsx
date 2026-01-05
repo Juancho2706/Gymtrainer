@@ -1,80 +1,184 @@
 "use client";
 
 import Image from 'next/image';
-import FadeIn from './FadeIn';
+import { useRef } from 'react';
 
 const Reviews = () => {
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
+
     const reviews = [
         {
             name: "Carlos M.",
-            role: "Atleta Híbrido",
+            role: "HÍBRIDO",
             image: "/review-1.png",
-            quote: "Nunca creí que pudiera ganar fuerza y resistencia al mismo tiempo. El plan de Roberto cambió mi mentalidad por completo. La disciplina es clave.",
+            quote: "La disciplina que enseña Roberto es otro nivel. No solo mejoré mi físico, sino mi mentalidad.",
+            stars: 5,
         },
         {
             name: "Valentina R.",
-            role: "Transformación",
+            role: "CAMBIO",
             image: "/review-2.png",
-            quote: "Perdí 10kg en 3 meses, pero lo más importante es que aprendí a comer y a disfrutar del proceso. El soporte 24/7 hace toda la diferencia.",
+            quote: "Con la guía de Olympus Wolf aprendí a comer y entrenar de verdad. 100% recomendado.",
+            stars: 5,
         },
         {
             name: "Javier S.",
-            role: "Hipertrofia",
+            role: "FUERZA",
             image: "/review-3.png",
-            quote: "Llevaba años estancado en el gimnasio. Con la periodización de Olympus Wolf, rompí mis marcas en semanas. Si quieres resultados reales, este es el lugar.",
+            quote: "Rompí mis marcas de Powerlifting en 3 meses. La programación es exacta. Si quieres fuerza real, este es el lugar.",
+            stars: 4,
         },
+        {
+            name: "Sofia L.",
+            role: "CROSSFIT",
+            image: "/review-4.png",
+            quote: "Mis tiempos en los WODs bajaron drásticamente. La planificación me dio la resistencia que faltaba.",
+            stars: 5,
+        },
+        {
+            name: "Diego A.",
+            role: "POWERLIFTING",
+            image: "/review-5.png",
+            quote: "Técnica depurada y kilos sumados a la barra. Roberto sabe exactamente cómo ajustar las cargas.",
+            stars: 5,
+        },
+        {
+            name: "Camila V.",
+            role: "RUNNING",
+            image: "/review-6.png",
+            quote: "Correr ya no me duele. Fortalecí mis piernas y core con el plan complementario. Ahora vuelo.",
+            stars: 4,
+        },
+        {
+            name: "Matias P.",
+            role: "CALISTENIA",
+            image: "/review-7.png",
+            quote: "Dominé el Muscle Up y el Front Lever gracias a la programación de fuerza específica.",
+            stars: 5,
+        }
     ];
 
+    const scroll = (direction: 'left' | 'right') => {
+        if (scrollContainerRef.current) {
+            const container = scrollContainerRef.current;
+            const scrollAmount = container.clientWidth; // Scroll one full screen width
+            const currentScroll = container.scrollLeft;
+            const maxScroll = container.scrollWidth - container.clientWidth;
+
+            if (direction === 'left') {
+                if (currentScroll <= 10) {
+                    container.scrollTo({ left: maxScroll, behavior: 'smooth' });
+                } else {
+                    container.scrollBy({ left: -scrollAmount / 2, behavior: 'smooth' });
+                }
+            } else {
+                if (currentScroll >= maxScroll - 10) {
+                    container.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    container.scrollBy({ left: scrollAmount / 2, behavior: 'smooth' });
+                }
+            }
+        }
+    };
+
+    // Helper for stars
+    const renderStars = (count: number) => {
+        return (
+            <div className="flex gap-1 mb-3 text-red-600">
+                {[...Array(5)].map((_, i) => (
+                    <svg key={i} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill={i < count ? "currentColor" : "none"} stroke="currentColor" className="w-4 h-4">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                    </svg>
+                ))}
+            </div>
+        );
+    };
+
     return (
-        <section className="section-padding bg-neutral-900 border-t border-white/5 relative overflow-hidden">
-            {/* Background Ambience */}
-            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-red-900/10 via-transparent to-transparent"></div>
+        <section id="reviews" className="bg-black text-white py-24 relative group/section">
+            <div className="border-b border-t border-white py-4 bg-red-600 text-black mb-16">
+                <div className="container mx-auto px-4 flex justify-between items-center">
+                    <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter">
+                        LA MANADA
+                    </h2>
 
-            <div className="container mx-auto relative z-10">
-                <div className="text-center mb-16">
-                    <FadeIn>
-                        <h2 className="heading-hero text-white mb-4">La <span className="text-red-600">Manada</span> Habla</h2>
-                    </FadeIn>
-                    <FadeIn delay={0.2}>
-                        <p className="text-gray-400 max-w-2xl mx-auto font-light">Resultados reales. Personas reales. Historias de éxito.</p>
-                    </FadeIn>
+                    {/* Navigation Buttons */}
+                    <div className="flex gap-2">
+                        <button
+                            onClick={() => scroll('left')}
+                            className="w-10 h-10 border border-black flex items-center justify-center hover:bg-black hover:text-white transition-colors"
+                            aria-label="Previous Review"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                            </svg>
+                        </button>
+                        <button
+                            onClick={() => scroll('right')}
+                            className="w-10 h-10 border border-black flex items-center justify-center hover:bg-black hover:text-white transition-colors"
+                            aria-label="Next Review"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
+            </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Horizontal Scroll Container */}
+            <div className="container mx-auto px-4">
+                <div
+                    ref={scrollContainerRef}
+                    className="flex overflow-x-auto scrollbar-hide py-4 gap-4 scroll-smooth snap-x snap-mandatory"
+                    style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                >
                     {reviews.map((review, idx) => (
-                        <FadeIn key={idx} delay={0.2 * (idx + 1)}>
-                            <div className="bg-black/50 border border-white/5 p-8 rounded-lg hover:border-red-600/30 transition-colors duration-300 relative group h-full flex flex-col">
-                                <div className="absolute top-0 right-0 p-6 opacity-20 text-6xl font-serif text-red-600 leading-none">"</div>
+                        <div
+                            key={idx}
+                            className="flex-shrink-0 snap-center w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(25%-0.75rem)]"
+                        >
+                            <div className="border border-white/30 bg-neutral-900/50 p-6 h-full flex flex-col justify-between hover:border-red-600 transition-colors">
 
-                                <div className="flex items-center gap-4 mb-6">
-                                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-red-600/50">
+                                {/* Header: Small Photo & Name */}
+                                <div className="flex items-center gap-3 mb-4">
+                                    <div className="relative w-10 h-10 rounded-full overflow-hidden border border-white flex-shrink-0">
                                         <Image
                                             src={review.image}
                                             alt={review.name}
                                             fill
-                                            className="object-cover group-hover:scale-110 transition-transform duration-500"
+                                            className="object-cover grayscale"
                                         />
                                     </div>
                                     <div>
-                                        <h4 className="text-white font-bold text-lg">{review.name}</h4>
-                                        <p className="text-red-500 text-xs uppercase tracking-widest">{review.role}</p>
+                                        <h4 className="text-sm font-bold uppercase leading-none text-white">{review.name}</h4>
+                                        <span className="text-[10px] text-gray-400 uppercase tracking-wide">
+                                            {review.role}
+                                        </span>
                                     </div>
                                 </div>
 
-                                <p className="text-gray-300 font-light italic leading-relaxed mb-4 flex-grow">
-                                    {review.quote}
-                                </p>
+                                {/* Stars */}
+                                {renderStars(review.stars)}
 
-                                <div className="flex text-yellow-500 text-xs">
-                                    {[1, 2, 3, 4, 5].map((star) => (
-                                        <span key={star}>★</span>
-                                    ))}
+                                {/* Quote */}
+                                <div className="relative flex-grow">
+                                    <p className="text-gray-300 font-medium leading-relaxed text-sm">
+                                        "{review.quote}"
+                                    </p>
                                 </div>
                             </div>
-                        </FadeIn>
+                        </div>
                     ))}
                 </div>
             </div>
+
+            {/* Hiding scrollbar for Webkit */}
+            <style jsx global>{`
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+         `}</style>
         </section>
     );
 };

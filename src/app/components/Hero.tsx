@@ -1,78 +1,74 @@
 "use client";
 
 import Image from 'next/image';
-import FadeIn from './FadeIn';
 
 const Hero = () => {
     return (
-        <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
-            {/* KEN BURNS BACKGROUND (Simulating Video) */}
-            <div className="absolute inset-0 z-0">
-                <div className="relative w-full h-full animate-ken-burns">
+        <section className="relative min-h-screen w-full flex flex-col pt-16 md:pt-20 border-b-2 border-white bg-black">
+            {/* TICKER TOP */}
+            <div className="w-full border-b border-white py-2 overflow-hidden bg-red-600 text-black">
+                <div className="animate-marquee whitespace-nowrap">
+                    <span className="text-xl md:text-2xl font-black uppercase tracking-widest px-4">
+                        OLYMPUS PROTOCOL • SIN PIEDAD • ENTRENA DURO • OLYMPUS PROTOCOL • SIN PIEDAD • ENTRENA DURO • OLYMPUS PROTOCOL • SIN PIEDAD • ENTRENA DURO •
+                    </span>
+                    <span className="text-xl md:text-2xl font-black uppercase tracking-widest px-4">
+                        OLYMPUS PROTOCOL • SIN PIEDAD • ENTRENA DURO • OLYMPUS PROTOCOL • SIN PIEDAD • ENTRENA DURO • OLYMPUS PROTOCOL • SIN PIEDAD • ENTRENA DURO •
+                    </span>
+                </div>
+            </div>
+
+            <div className="flex-1 grid grid-cols-1 md:grid-cols-12 items-stretch">
+                {/* TEXT COLUMN */}
+                <div className="col-span-1 md:col-span-7 border-r border-white p-8 md:p-16 flex flex-col justify-center relative overflow-hidden">
+                    <div className="noise-bg"></div>
+                    <h1 className="relative z-10 text-mega text-white mb-6">
+                        DOMINA<br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-500">TU</span><br />
+                        <span className="text-red-600">REALIDAD</span>
+                    </h1>
+                    <p className="relative z-10 text-xl md:text-3xl font-bold uppercase tracking-widest text-gray-400 mb-12 max-w-xl">
+                        No excusas. Solo resultados puros. Únete a la élite de Olympus Wolf.
+                    </p>
+                    <div className="relative z-10 flex gap-4">
+                        <a href="#services" className="btn-brutal bg-white text-black border-2 border-white hover:bg-black hover:text-white hover:border-white inline-block text-center">
+                            COMPRAR PLAN
+                        </a>
+                        <a href="#reviews" className="btn-outline-brutal text-white border-2 border-white hover:bg-white hover:text-black inline-block text-center">
+                            VER TESTIMONIOS
+                        </a>
+                    </div>
+                </div>
+
+                {/* IMAGE COLUMN */}
+                <div className="col-span-1 md:col-span-5 relative border-b md:border-b-0 border-white h-[50vh] md:h-auto overflow-hidden group">
                     <Image
                         src="/hero-cinematic.png"
-                        alt="Cinematic Gym Atmosphere"
+                        alt="Gym"
                         fill
-                        className="object-cover opacity-60"
-                        priority
+                        className="object-cover grayscale contrast-125 brightness-75 group-hover:scale-105 transition-transform duration-700 ease-out"
                     />
-                </div>
-                {/* Overlay Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-10" />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80 z-10" />
-                {/* Noise Texture Overlay */}
-                <div className="absolute inset-0 opacity-[0.05] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] z-10 pointer-events-none mix-blend-overlay" />
-            </div>
+                    <div className="absolute inset-0 bg-red-600 mix-blend-multiply opacity-50"></div>
+                    <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-30 mix-blend-overlay"></div>
 
-            <div className="relative z-20 container mx-auto px-4 text-center">
-                {/* Floating Logo */}
-                <div className="mb-10 flex justify-center">
-                    <FadeIn delay={0.2} direction="down" className="w-48 h-48 md:w-64 md:h-64 relative animate-float">
-                        <div className="absolute inset-0 rounded-full bg-red-600 blur-[80px] opacity-40 animate-pulse"></div>
-                        <Image
-                            src="/olympus-logo.jpg"
-                            alt="Logo de Olympus Wolf"
-                            fill
-                            className="object-cover rounded-full border-2 border-white/10 shadow-2xl relative z-10"
-                        />
-                    </FadeIn>
-                </div>
-
-                <FadeIn delay={0.4}>
-                    <h1 className="heading-hero text-white mb-2 drop-shadow-2xl relative">
-                        <span className="block text-2xl md:text-3xl font-light tracking-[0.5em] text-red-500 mb-2 font-inter">ESTO ES</span>
-                        <span className="relative z-10">EL OLIMPO</span>
-                        {/* Outlined Text behind for depth */}
-                        <span className="absolute top-1 left-1 md:top-2 md:left-2 text-stroke opacity-30 select-none z-[-1]" aria-hidden="true">EL OLIMPO</span>
-                    </h1>
-                </FadeIn>
-
-                <FadeIn delay={0.6}>
-                    <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto font-light tracking-wide">
-                        Entrena como un dios. Conviértete en leyenda.
-                    </p>
-                </FadeIn>
-
-                <FadeIn delay={0.8}>
-                    <div className="flex flex-col md:flex-row gap-6 justify-center">
-                        <button className="btn-primary shadow-[0_0_30px_rgba(220,38,38,0.5)] animate-pulse-glow">
-                            Únete a la Manada
-                        </button>
-                        <button className="btn-secondary backdrop-blur-md bg-white/5 border-white/20 hover:bg-white/10">
-                            Ver Legado
-                        </button>
+                    {/* Floating Badge */}
+                    <div className="absolute bottom-8 right-8 bg-black border-2 border-white p-4 rotator">
+                        <div className="text-white font-black text-center leading-none">
+                            <span className="block text-4xl">100%</span>
+                            <span className="text-xs uppercase tracking-widest">Compromiso</span>
+                        </div>
                     </div>
-                </FadeIn>
+                </div>
             </div>
 
-            {/* MARQUEE SCROLL (Running Text) */}
-            <div className="absolute bottom-10 left-0 w-full overflow-hidden z-20 opacity-50 pointer-events-none">
-                <div className="whitespace-nowrap animate-marquee flex gap-8">
-                    {Array(10).fill("OLYMPUS WOLF • TRAIN LIKE A GOD • NO LIMITS • ").map((text, i) => (
-                        <span key={i} className="text-4xl md:text-6xl font-black font-fitness text-stroke-red tracking-wider">
-                            {text}
-                        </span>
-                    ))}
+            {/* TICKER BOTTOM */}
+            <div className="w-full border-t border-white py-2 overflow-hidden bg-black text-white">
+                <div className="animate-marquee-reverse whitespace-nowrap">
+                    <span className="text-sm md:text-base font-bold uppercase tracking-[0.5em] px-4 font-mono">
+                        SISTEMA LISTO // INICIANDO PROTOCOLO // OLYMPUS WOLF V3 // SISTEMA LISTO // INICIANDO PROTOCOLO // OLYMPUS WOLF V3 //
+                    </span>
+                    <span className="text-sm md:text-base font-bold uppercase tracking-[0.5em] px-4 font-mono">
+                        SISTEMA LISTO // INICIANDO PROTOCOLO // OLYMPUS WOLF V3 // SISTEMA LISTO // INICIANDO PROTOCOLO // OLYMPUS WOLF V3 //
+                    </span>
                 </div>
             </div>
         </section>

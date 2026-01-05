@@ -7,72 +7,68 @@
   --foreground: #ffffff;
   --primary: #dc2626;
   /* red-600 */
-  --secondary: #171717;
-  /* neutral-900 */
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-black text-white antialiased;
-    font-family: var(--font-inter), sans-serif;
+    @apply bg-black text-white antialiased overflow-x-hidden;
+    font-family: 'Oswald', sans-serif;
+    /* Hard, condensed font */
   }
 }
 
 @layer components {
-  .btn-primary {
-    @apply px-8 py-3 bg-red-600 hover:bg-white hover:text-red-700 text-white font-bold uppercase tracking-wider transition-all duration-300 transform hover:scale-105;
+
+  /* BRUTALIST UTILITIES */
+  .border-raw {
+    @apply border border-white/20;
   }
 
-  .btn-secondary {
-    @apply px-8 py-3 bg-transparent border-2 border-white hover:bg-white hover:text-black text-white font-bold uppercase tracking-wider transition-all duration-300;
+  .border-heavy {
+    @apply border-2 border-white;
   }
 
-  .heading-hero {
-    @apply font-black text-5xl md:text-7xl lg:text-9xl tracking-tighter uppercase;
+  .text-mega {
+    @apply text-6xl md:text-8xl lg:text-[10rem] font-black uppercase leading-[0.8] tracking-tighter;
   }
 
-  .section-padding {
-    @apply py-24 px-4 md:px-8;
+  .btn-brutal {
+    @apply relative px-8 py-4 bg-white text-black font-bold uppercase tracking-widest border-2 border-transparent hover:bg-red-600 hover:text-white transition-colors duration-0;
   }
 
-  /* TEXT STROKE UTILITY */
-  .text-stroke {
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
-    color: transparent;
+  .btn-outline-brutal {
+    @apply relative px-8 py-4 bg-transparent text-white font-bold uppercase tracking-widest border-2 border-white hover:bg-white hover:text-black transition-colors duration-0;
   }
 
-  .text-stroke-red {
-    -webkit-text-stroke: 1px rgba(220, 38, 38, 0.5);
-    color: transparent;
+  .section-grid {
+    @apply border-b border-white/20;
+    /* This class will be often used with grid layouts to create the visible grid aesthetic */
+  }
+
+  /* NOISE OVERLAY */
+  .noise-bg {
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    opacity: 0.15;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    z-index: 50;
   }
 }
 
 /* ANIMATIONS */
-@keyframes ken-burns {
-  0% {
-    transform: scale(1) translate(0, 0);
-  }
-
-  50% {
-    transform: scale(1.1) translate(-1%, -1%);
-  }
-
-  100% {
-    transform: scale(1) translate(0, 0);
-  }
-}
-
-.animate-ken-burns {
-  animation: ken-burns 30s ease-in-out infinite alternate;
-}
-
 @keyframes marquee {
   0% {
     transform: translateX(0);
   }
 
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 
@@ -80,36 +76,25 @@
   animation: marquee 20s linear infinite;
 }
 
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-20px);
-  }
-
-  100% {
-    transform: translateY(0px);
-  }
+.animate-marquee-reverse {
+  animation: marquee 20s linear infinite reverse;
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
+/* Custom Scrollbar for that raw feel */
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-@keyframes pulse-glow {
-
-  0%,
-  100% {
-    box-shadow: 0 0 20px rgba(220, 38, 38, 0.2);
-  }
-
-  50% {
-    box-shadow: 0 0 40px rgba(220, 38, 38, 0.6);
-  }
+::-webkit-scrollbar-track {
+  background: #000;
+  border-left: 1px solid #333;
 }
 
-.animate-pulse-glow {
-  animation: pulse-glow 3s infinite;
+::-webkit-scrollbar-thumb {
+  background: #dc2626;
+  border: 1px solid #000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fff;
 }

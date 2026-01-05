@@ -1,63 +1,62 @@
 "use client";
 
-import FadeIn from './FadeIn';
+import Image from 'next/image';
 
 const About = () => {
     return (
-        <section id="about" className="section-padding bg-neutral-900 relative overflow-hidden">
-            {/* Decorative elements */}
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-black/50 to-transparent pointer-events-none" />
+        <section id="about" className="bg-white text-black border-b-2 border-black">
+            <div className="grid grid-cols-1 md:grid-cols-2">
+                {/* LEFT: TEXT */}
+                <div className="p-8 md:p-16 border-b md:border-b-0 md:border-r border-black flex flex-col justify-center">
+                    <div className="inline-block border-2 border-black px-4 py-1 mb-8 self-start">
+                        <span className="font-bold uppercase tracking-widest text-sm">ENTRENADOR CERTIFICADO</span>
+                    </div>
 
-            <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
-                <div className="order-2 md:order-1 relative group">
-                    <FadeIn direction="right">
-                        <div className="aspect-[3/4] bg-neutral-800 rounded-lg relative overflow-hidden shadow-2xl border border-white/5 group-hover:border-red-600/30 transition-colors duration-500">
-                            <div className="absolute inset-0 bg-neutral-800 flex items-center justify-center">
-                                {/* Abstract Geometric Wolf Element or Placeholder Pattern */}
-                                <div className="w-full h-full opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent" />
-                                <span className="relative z-10 text-neutral-600 font-bold uppercase tracking-widest text-xl text-center px-4">
-                                    Roberto Carrasco N.<br />
-                                    <span className="text-sm font-normal text-neutral-500 mt-2 block">Entrenador Deportivo</span>
-                                </span>
-                            </div>
+                    <h2 className="text-6xl md:text-8xl font-black uppercase mb-8 leading-[0.85] tracking-tighter">
+                        ROBERTO<br /><span className="text-red-600">CARRASCO</span>
+                    </h2>
+
+                    <div className="space-y-6 text-lg md:text-xl font-medium leading-relaxed max-w-xl">
+                        <p>
+                            <strong className="bg-black text-white px-1">UVM TITULADO.</strong> No soy un influencer. Soy un profesional del deporte.
+                            Mi enfoque combina la ciencia del rendimiento con la brutalidad del esfuerzo real.
+                        </p>
+                        <p>
+                            10 años forjando atletas. Sin atajos. Sin mentiras.
+                            Si buscas una palmadita en la espalda, busca otro lugar.
+                            Si buscas resultados, bienvenido a la manada.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-4 mt-12">
+                        <div className="border border-black p-4 bg-gray-100">
+                            <span className="block text-4xl font-black">10+</span>
+                            <span className="text-xs uppercase tracking-widest">AÑOS EXP</span>
                         </div>
-                        {/* Achievement Badge */}
-                        <div className="absolute -bottom-6 -right-6 bg-gradient-to-br from-red-600 to-red-800 p-8 text-white text-center shadow-[0_10px_30px_rgba(220,38,38,0.4)] z-20 rounded-sm">
-                            <p className="text-4xl font-black font-fitness">UVM</p>
-                            <p className="text-[10px] uppercase tracking-widest font-bold mt-1">Universidad Viña del Mar</p>
+                        <div className="border border-black p-4 bg-gray-100">
+                            <span className="block text-4xl font-black">PRO</span>
+                            <span className="text-xs uppercase tracking-widest">UVM ALUMNI</span>
                         </div>
-                    </FadeIn>
+                    </div>
                 </div>
 
-                <div className="order-1 md:order-2">
-                    <FadeIn delay={0.2}>
-                        <h2 className="heading-hero text-white mb-2">Roberto <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">Carrasco</span></h2>
-                        <h3 className="text-xl text-gray-400 font-light mb-8 uppercase tracking-widest">Entrenador Deportivo</h3>
-                    </FadeIn>
-                    <FadeIn delay={0.4}>
-                        <p className="text-gray-400 text-lg mb-6 leading-relaxed border-l-4 border-red-600 pl-6">
-                            Mi misión es elevar tu rendimiento físico y mental. Como Entrenador Deportivo titulado de la Universidad de Viña del Mar, combino la ciencia del deporte con la disciplina inquebrantable de la manada.
-                        </p>
-                    </FadeIn>
-                    <FadeIn delay={0.5}>
-                        <p className="text-gray-400 text-lg mb-10 leading-relaxed font-light">
-                            Cada plan está diseñado meticulosamente para tu objetivo específico. No existen fórmulas mágicas, solo planificación profesional, nutrición estratégica y trabajo duro.
-                        </p>
-                    </FadeIn>
+                {/* RIGHT: IMAGE */}
+                <div className="relative min-h-[500px] overflow-hidden bg-black group">
+                    {/* Simulated Trainer Image */}
+                    <div className="absolute inset-0 bg-neutral-800 flex items-center justify-center">
+                        <div className="text-white text-center opacity-50">
+                            <span className="block text-9xl font-black opacity-10">RCN</span>
+                            <span className="uppercase tracking-[1em] text-sm mt-4">Retrato Entrenador</span>
+                        </div>
+                    </div>
 
-                    <div className="grid grid-cols-2 gap-8">
-                        <FadeIn delay={0.6}>
-                            <div>
-                                <h4 className="text-white font-bold text-3xl mb-1 flex items-baseline gap-1">10<span className="text-red-600 text-lg">+</span></h4>
-                                <p className="text-gray-500 text-xs uppercase tracking-widest">Años de Experiencia</p>
-                            </div>
-                        </FadeIn>
-                        <FadeIn delay={0.7}>
-                            <div>
-                                <h4 className="text-white font-bold text-3xl mb-1">Pro</h4>
-                                <p className="text-gray-500 text-xs uppercase tracking-widest">Certificado UVM</p>
-                            </div>
-                        </FadeIn>
+                    <div className="absolute inset-0 opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay pointer-events-none"></div>
+
+                    {/* Overlay Text */}
+                    <div className="absolute bottom-0 left-0 w-full p-8">
+                        <h3 className="text-white text-8xl font-black leading-none opacity-20 group-hover:opacity-100 transition-opacity duration-500 select-none">
+                            LÍDER
+                        </h3>
                     </div>
                 </div>
             </div>

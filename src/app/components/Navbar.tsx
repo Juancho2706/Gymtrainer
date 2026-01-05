@@ -1,66 +1,88 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
 
 const Navbar = () => {
-    const [scrolled, setScrolled] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setScrolled(true);
-            } else {
-                setScrolled(false);
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    const [isOpen, setIsOpen] = useState(false);
 
     const navLinks = [
-        { name: "Perfil", href: "#about" },
-        { name: "Servicios", href: "#services" },
-        { name: "Contacto", href: "#contact" },
+        { name: "PERFIL", href: "#about" },
+        { name: "PLANES", href: "#services" },
+        { name: "MANADA", href: "#reviews" },
+        { name: "CONTACTO", href: "#contact" },
     ];
 
     return (
-        <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-black/80 backdrop-blur-md py-4 shadow-2xl border-b border-white/5" : "bg-transparent py-6"
-                }`}
-        >
-            <div className="container mx-auto px-4 flex justify-between items-center">
-                <Link href="/" className="flex items-center gap-2">
-                    {/* Brand Logo Text */}
-                    <span className="font-fitness text-2xl md:text-3xl font-bold tracking-widest text-white italic">
-                        OLYMPUS<span className="text-red-600">WOLF</span>
-                    </span>
-                </Link>
+        <nav className="fixed top-0 left-0 right-0 z-[100] bg-black border-b border-white text-white">
+            <div className="grid grid-cols-2 md:grid-cols-12 h-16 md:h-20 items-stretch">
 
-                {/* Desktop Menu */}
-                <div className="hidden md:flex items-center gap-8">
-                    {navLinks.map((item) => (
-                        <Link
-                            key={item.name}
-                            href={item.href}
-                            className="text-sm font-bold uppercase tracking-wider text-neutral-400 hover:text-white hover:text-red-500 transition-colors duration-300"
-                        >
-                            {item.name}
-                        </Link>
-                    ))}
-                    <button className="px-6 py-2 bg-gradient-to-r from-red-700 to-red-600 text-white font-bold uppercase text-sm hover:from-red-600 hover:to-red-500 transition-all shadow-lg shadow-red-900/20 rounded-sm">
-                        Únete Ahora
-                    </button>
+                {/* LOGO BOX - Spans 4 cols on desktop */}
+                <div className="col-span-1 md:col-span-3 border-r border-white flex items-center px-4 md:px-6 bg-black">
+                    <Link href="/" className="flex items-center gap-2 relative h-full py-2 w-full">
+                        <div className="relative h-full w-auto aspect-square">
+                            <Image
+                                src="/olympus-logo.jpg"
+                                alt="Olympus Wolf Logo"
+                                fill
+                                className="object-contain"
+                            />
+                        </div>
+                        <span className="text-xl md:text-2xl font-black uppercase tracking-tighter leading-none hidden xl:block">
+                            OLYMPUS<span className="text-red-600">WOLF</span>
+                        </span>
+                    </Link>
                 </div>
 
-                {/* Mobile Menu Button */}
-                <button className="md:hidden text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                    </svg>
-                </button>
+                {/* DESKTOP MENU - Spans 6 cols */}
+                <div className="hidden md:flex col-span-6 border-r border-white justify-between items-stretch">
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.name}
+                            href={link.href}
+                            className="flex-1 flex items-center justify-center font-bold text-sm uppercase tracking-widest hover:bg-white hover:text-black transition-colors border-r border-white/10 last:border-none"
+                        >
+                            {link.name}
+                        </Link>
+                    ))}
+                </div>
+
+                {/* CTA BUTTON - Spans 3 cols */}
+                <div className="hidden md:flex col-span-3 items-center justify-center bg-red-600 hover:bg-white group transition-colors cursor-pointer">
+                    <Link href="#services" className="w-full h-full flex items-center justify-center">
+                        <span className="font-black uppercase tracking-widest text-white group-hover:text-red-600 text-lg">
+                            UNIRSE AHORA
+                        </span>
+                    </Link>
+                </div>
+
+                {/* MOBILE MENU TOGGLE */}
+                <div className="md:hidden col-span-1 flex items-center justify-end px-6 border-l border-white bg-black" onClick={() => setIsOpen(!isOpen)}>
+                    <button className="text-white hover:text-red-600">
+                        <span className="font-black text-lg uppercase">{isOpen ? "CERRAR" : "MENU"}</span>
+                    </button>
+                </div>
             </div>
+
+            {/* MOBILE MENU DRAWER */}
+            {isOpen && (
+                <div className="md:hidden border-t border-white bg-black">
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.name}
+                            href={link.href}
+                            onClick={() => setIsOpen(false)}
+                            className="block py-6 px-6 border-b border-white/20 font-bold text-xl uppercase hover:bg-white hover:text-black hover:pl-10 transition-all"
+                        >
+                            {link.name}
+                        </Link>
+                    ))}
+                    <div className="py-6 px-6 bg-red-600 text-center">
+                        <span className="font-black text-white text-xl uppercase">UNIRSE AHORA</span>
+                    </div>
+                </div>
+            )}
         </nav>
     );
 };
