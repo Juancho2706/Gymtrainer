@@ -1,76 +1,107 @@
 "use client";
-
-import Image from 'next/image';
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 
 const Hero = () => {
     return (
-        <section className="relative min-h-screen w-full flex flex-col pt-16 md:pt-20 border-b-2 border-white bg-black">
-            {/* TICKER TOP */}
-            <div className="w-full border-b border-white py-2 overflow-hidden bg-red-600 text-black">
-                <div className="animate-marquee whitespace-nowrap">
-                    <span className="text-xl md:text-2xl font-black uppercase tracking-widest px-4">
-                        OLYMPUS PROTOCOL • SIN PIEDAD • ENTRENA DURO • OLYMPUS PROTOCOL • SIN PIEDAD • ENTRENA DURO • OLYMPUS PROTOCOL • SIN PIEDAD • ENTRENA DURO •
-                    </span>
-                    <span className="text-xl md:text-2xl font-black uppercase tracking-widest px-4">
-                        OLYMPUS PROTOCOL • SIN PIEDAD • ENTRENA DURO • OLYMPUS PROTOCOL • SIN PIEDAD • ENTRENA DURO • OLYMPUS PROTOCOL • SIN PIEDAD • ENTRENA DURO •
-                    </span>
-                </div>
+        <section id="hero" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-onyx">
+
+            {/* BACKGROUND LAYER */}
+            <div className="absolute inset-0 z-0">
+                <Image
+                    src="/hero-cinematic.png"
+                    alt="Gym Cinematic"
+                    fill
+                    className="object-cover opacity-40 grayscale contrast-125"
+                    priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-onyx via-onyx/50 to-transparent"></div>
+                <div className="text-neon-bg absolute inset-0 opacity-10 mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
             </div>
 
-            <div className="flex-1 grid grid-cols-1 md:grid-cols-12 items-stretch">
-                {/* TEXT COLUMN */}
-                <div className="col-span-1 md:col-span-7 border-r border-white p-8 md:p-16 flex flex-col justify-center relative overflow-hidden">
-                    <div className="noise-bg"></div>
-                    <h1 className="relative z-10 text-mega text-white mb-6">
-                        DOMINA<br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-500">TU</span><br />
-                        <span className="text-red-600">REALIDAD</span>
-                    </h1>
-                    <p className="relative z-10 text-xl md:text-3xl font-bold uppercase tracking-widest text-gray-400 mb-12 max-w-xl">
-                        No excusas. Solo resultados puros. Únete a la élite de Olympus Wolf.
-                    </p>
-                    <div className="relative z-10 flex gap-4">
-                        <a href="#services" className="btn-brutal bg-white text-black border-2 border-white hover:bg-black hover:text-white hover:border-white inline-block text-center">
-                            COMPRAR PLAN
-                        </a>
-                        <a href="#reviews" className="btn-outline-brutal text-white border-2 border-white hover:bg-white hover:text-black inline-block text-center">
-                            VER TESTIMONIOS
-                        </a>
-                    </div>
-                </div>
+            {/* CONTENT LAYER */}
+            <div className="relative z-10 container mx-auto px-6 h-full flex flex-col justify-center items-center text-center pt-20">
 
-                {/* IMAGE COLUMN */}
-                <div className="col-span-1 md:col-span-5 relative border-b md:border-b-0 border-white h-[50vh] md:h-auto overflow-hidden group">
-                    <Image
-                        src="/hero-cinematic.png"
-                        alt="Gym"
-                        fill
-                        className="object-cover grayscale contrast-125 brightness-75 group-hover:scale-105 transition-transform duration-700 ease-out"
-                    />
-                    <div className="absolute inset-0 bg-red-600 mix-blend-multiply opacity-50"></div>
-                    <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-30 mix-blend-overlay"></div>
+                {/* KINETIC TITLE */}
+                <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, staggerChildren: 0.1 }}
+                    className="mb-6 font-black italic tracking-tighter uppercase text-6xl md:text-8xl lg:text-[9rem] leading-[0.8] text-white mix-blend-exclusion"
+                >
+                    <motion.div className="inline-block text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">
+                        DOMINA
+                    </motion.div>
+                    <br className="hidden md:block" />
+                    <motion.div
+                        className="inline-block text-neon-lime drop-shadow-[0_0_15px_rgba(204,255,0,0.6)]"
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ delay: 0.5, type: "spring" }}
+                    >
+                        TU REALIDAD
+                    </motion.div>
+                </motion.div>
 
-                    {/* Floating Badge */}
-                    <div className="absolute bottom-8 right-8 bg-black border-2 border-white p-4 rotator">
-                        <div className="text-white font-black text-center leading-none">
-                            <span className="block text-4xl">100%</span>
-                            <span className="text-xs uppercase tracking-widest">Compromiso</span>
-                        </div>
-                    </div>
-                </div>
+                {/* SUBTEXT */}
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1, duration: 1 }}
+                    className="max-w-xl text-lg md:text-2xl text-gray-300 font-medium tracking-widest uppercase mb-12 border-l-4 border-neon-lime pl-6 text-left"
+                >
+                    No excusas. Solo resultados puros.
+                    <br />
+                    <span className="text-white font-bold">Únete a la élite de Olympus Wolf.</span>
+                </motion.p>
+
+                {/* ACTION BUTTONS */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.2 }}
+                    className="flex flex-col md:flex-row gap-6"
+                >
+                    <Link
+                        href="#services"
+                        className="btn-kinetic hover:scale-110 transition-transform"
+                    >
+                        EMPEZAR AHORA
+                    </Link>
+                    <Link
+                        href="#reviews"
+                        className="px-8 py-3 border border-white/30 text-white font-bold uppercase tracking-widest hover:bg-white hover:text-onyx transition-colors backdrop-blur-sm"
+                    >
+                        VER TESTIMONIOS
+                    </Link>
+                </motion.div>
             </div>
 
-            {/* TICKER BOTTOM */}
-            <div className="w-full border-t border-white py-2 overflow-hidden bg-black text-white">
-                <div className="animate-marquee-reverse whitespace-nowrap">
-                    <span className="text-sm md:text-base font-bold uppercase tracking-[0.5em] px-4 font-mono">
-                        SISTEMA LISTO // INICIANDO PROTOCOLO // OLYMPUS WOLF V3 // SISTEMA LISTO // INICIANDO PROTOCOLO // OLYMPUS WOLF V3 //
-                    </span>
-                    <span className="text-sm md:text-base font-bold uppercase tracking-[0.5em] px-4 font-mono">
-                        SISTEMA LISTO // INICIANDO PROTOCOLO // OLYMPUS WOLF V3 // SISTEMA LISTO // INICIANDO PROTOCOLO // OLYMPUS WOLF V3 //
-                    </span>
+            {/* FLOATING DATA WIDGETS */}
+            <motion.div
+                initial={{ x: 100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: 1.5 }}
+                className="absolute bottom-10 right-10 hidden lg:block"
+            >
+                <div className="glass-panel p-6 max-w-xs transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                    <h4 className="text-neon-lime font-mono text-xs mb-2">/ SYSTEM STATUS</h4>
+                    <div className="text-4xl font-black text-white mb-1">100%</div>
+                    <div className="text-sm text-gray-400 uppercase tracking-widest">COMPROMISO REQUERIDO</div>
                 </div>
-            </div>
+            </motion.div>
+
+            {/* SCROLL INDICATOR */}
+            <motion.div
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 text-xs tracking-[0.3em] animate-bounce"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 2 }}
+            >
+                SCROLL TO EXPLORE
+            </motion.div>
+
         </section>
     );
 };

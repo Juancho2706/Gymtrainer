@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${oswald.variable} ${inter.variable} antialiased bg-black text-white`}
+        className={`${oswald.variable} ${inter.variable} antialiased bg-onyx text-white`}
       >
         {children}
       </body>

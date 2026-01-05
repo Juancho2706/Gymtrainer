@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --background: #000000;
+  --background: #0a0a0a;
   --foreground: #ffffff;
-  --primary: #dc2626;
-  /* red-600 */
+  --primary: #ccff00;
+  /* Neon Lime */
 }
 
 @layer base {
@@ -15,86 +15,70 @@
   }
 
   body {
-    @apply bg-black text-white antialiased overflow-x-hidden;
+    @apply bg-onyx text-white antialiased overflow-x-hidden selection:bg-neon-lime selection:text-onyx;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: 'Oswald', sans-serif;
-    /* Hard, condensed font */
   }
 }
 
 @layer components {
 
-  /* BRUTALIST UTILITIES */
-  .border-raw {
-    @apply border border-white/20;
+  /* GLASSMORPHISM */
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
   }
 
-  .border-heavy {
-    @apply border-2 border-white;
+  /* KINETIC UTILITIES */
+  .text-neon {
+    @apply text-neon-lime drop-shadow-[0_0_8px_rgba(204, 255, 0, 0.5)];
   }
 
-  .text-mega {
-    @apply text-6xl md:text-8xl lg:text-[10rem] font-black uppercase leading-[0.8] tracking-tighter;
+  .border-neon {
+    @apply border-neon-lime shadow-[0_0_10px_rgba(204, 255, 0, 0.3)];
   }
 
-  .btn-brutal {
-    @apply relative px-8 py-4 bg-white text-black font-bold uppercase tracking-widest border-2 border-transparent hover:bg-red-600 hover:text-white transition-colors duration-0;
+  /* BUTTONS */
+  .btn-kinetic {
+    @apply relative px-8 py-3 bg-neon-lime text-onyx font-bold uppercase tracking-widest hover:bg-white transition-all duration-300;
+    clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
   }
 
-  .btn-outline-brutal {
-    @apply relative px-8 py-4 bg-transparent text-white font-bold uppercase tracking-widest border-2 border-white hover:bg-white hover:text-black transition-colors duration-0;
+  /* CLIP PATH UTILITIES */
+  .clip-path-slant {
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
   }
 
-  .section-grid {
-    @apply border-b border-white/20;
-    /* This class will be often used with grid layouts to create the visible grid aesthetic */
+  .clip-path-slant-down {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 100%);
   }
 
-  /* NOISE OVERLAY */
-  .noise-bg {
-    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-    opacity: 0.15;
-    mix-blend-mode: overlay;
-    pointer-events: none;
-    position: absolute;
-    inset: 0;
-    z-index: 50;
+  .clip-path-polygon {
+    clip-path: polygon(10% 0, 100% 0, 100% 85%, 90% 100%, 0 100%);
   }
 }
 
-/* ANIMATIONS */
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-.animate-marquee {
-  animation: marquee 20s linear infinite;
-}
-
-.animate-marquee-reverse {
-  animation: marquee 20s linear infinite reverse;
-}
-
-/* Custom Scrollbar for that raw feel */
+/* CUSTOM SCROLLBAR */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #000;
-  border-left: 1px solid #333;
+  background: #0a0a0a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #dc2626;
-  border: 1px solid #000;
+  background: #333;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #fff;
+  background: #ccff00;
 }
