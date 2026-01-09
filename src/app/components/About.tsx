@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const About = () => {
     return (
@@ -57,10 +58,14 @@ const About = () => {
                     {/* IMAGE / VISUAL */}
                     <div className="order-1 lg:order-2 relative h-[600px] w-full bg-onyx clip-path-polygon group overflow-hidden">
                         {/* Placeholder for trainer image */}
-                        <div className="absolute inset-0 bg-neutral-900 flex items-center justify-center">
-                            <div className="text-white text-center opacity-30">
-                                <span className="block text-9xl font-black opacity-10">RCN</span>
-                            </div>
+                        <div className="absolute inset-0 bg-neutral-900">
+                            <Image
+                                src="/trainer-portrait.jpeg"
+                                alt="Roberto Carrasco - Entrenador"
+                                fill
+                                className="object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700 ease-out"
+                                priority
+                            />
                         </div>
 
                         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-40 mix-blend-overlay"></div>

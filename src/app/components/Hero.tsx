@@ -9,13 +9,15 @@ const Hero = () => {
 
             {/* BACKGROUND LAYER */}
             <div className="absolute inset-0 z-0">
-                <Image
-                    src="/hero-cinematic.png"
-                    alt="Gym Cinematic"
-                    fill
-                    className="object-cover opacity-40 grayscale contrast-125"
-                    priority
-                />
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute w-full h-full object-cover opacity-40 grayscale contrast-125"
+                >
+                    <source src="/video-biceps-opt.mp4" type="video/mp4" />
+                </video>
                 <div className="absolute inset-0 bg-gradient-to-t from-onyx via-onyx/50 to-transparent"></div>
                 <div className="text-neon-bg absolute inset-0 opacity-10 mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
             </div>
