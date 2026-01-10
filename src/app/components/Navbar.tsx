@@ -26,6 +26,7 @@ const Navbar = () => {
                                 src="/olympus-logo.jpg"
                                 alt="Olympus Wolf Logo"
                                 fill
+                                sizes="(max-width: 768px) 50vw, 33vw"
                                 className="object-contain"
                             />
                         </div>

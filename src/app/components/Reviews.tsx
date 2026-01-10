@@ -147,6 +147,7 @@ const Reviews = () => {
                                             src={review.image}
                                             alt={review.name}
                                             fill
+                                            sizes="40px"
                                             className="object-cover grayscale"
                                         />
                                     </div>

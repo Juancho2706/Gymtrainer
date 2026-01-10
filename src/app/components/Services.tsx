@@ -4,7 +4,7 @@ const Services = () => {
     // Helper to build WhatsApp URL
     const getWhatsAppUrl = (planName: string) => {
         const message = `Hola Roberto, me interesa contratar el plan *${planName}*.`;
-        return `https://wa.me/56900000000?text=${encodeURIComponent(message)}`;
+        return `https://wa.me/56976691584?text=${encodeURIComponent(message)}`;
     };
 
     const prices = [

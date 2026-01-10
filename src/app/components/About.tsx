@@ -65,6 +65,7 @@ const About = () => {
                             src="/trainer-portrait.jpeg"
                             alt="Roberto Carrasco - Entrenador"
                             fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             className="object-cover transition-all duration-700 ease-out"
                         />
                     </motion.div>
