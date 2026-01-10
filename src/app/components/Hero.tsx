@@ -7,6 +7,7 @@ const Hero = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
 
     useEffect(() => {
+        // Force play on mount to bypass some mobile autoplay restrictions
         if (videoRef.current) {
             videoRef.current.play().catch(error => {
                 console.log("Autoplay prevented by browser:", error);
@@ -54,8 +55,8 @@ const Hero = () => {
                 <div className="col-span-1 md:col-span-5 relative border-b md:border-b-0 border-white h-[50vh] md:h-auto overflow-hidden group">
                     <video
                         ref={videoRef}
-                        src="/FINAL.mp4"
-                        poster="/hero-cinematic.png"
+                        src="/FINAL.mp4" // Re-encoded for max compatibility (H.264 Baseline)
+                        poster="/hero-cinematic.png" // Fallback for low-power mode / blocked autoplay
                         autoPlay
                         loop
                         muted

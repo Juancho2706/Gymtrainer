@@ -42,13 +42,14 @@ const About = () => {
 
                 {/* RIGHT: IMAGE */}
                 <div className="relative min-h-[500px] overflow-hidden bg-black group">
-                    <Image 
+                    <Image
                         src="/trainer-portrait.jpeg"
                         alt="Roberto Carrasco - Entrenador"
                         fill
+                        // Transition: Grayscale by default, color on hover
                         className="object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-out"
                     />
-                    
+
                     <div className="absolute inset-0 bg-red-600 mix-blend-multiply opacity-20 group-hover:opacity-0 transition-opacity duration-700"></div>
                     <div className="absolute inset-0 opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay pointer-events-none"></div>
 
