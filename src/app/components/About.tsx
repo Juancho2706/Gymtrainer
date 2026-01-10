@@ -60,7 +60,7 @@ const About = () => {
                         {/* Placeholder for trainer image */}
                         <div className="absolute inset-0 bg-neutral-900">
                             <Image
-                                src="/trainer-portrait.jpeg"
+                                src="/segundapagina/trainer-portrait.jpeg"
                                 alt="Roberto Carrasco - Entrenador"
                                 fill
                                 className="object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700 ease-out"
