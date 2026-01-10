@@ -1,8 +1,19 @@
 "use client";
 
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 const Hero = () => {
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    useEffect(() => {
+        if (videoRef.current) {
+            videoRef.current.play().catch(error => {
+                console.log("Autoplay prevented by browser:", error);
+            });
+        }
+    }, []);
+
     return (
         <section className="relative min-h-screen w-full flex flex-col pt-16 md:pt-20 border-b-2 border-white bg-black">
             {/* TICKER TOP */}
@@ -42,6 +53,7 @@ const Hero = () => {
                 {/* IMAGE COLUMN */}
                 <div className="col-span-1 md:col-span-5 relative border-b md:border-b-0 border-white h-[50vh] md:h-auto overflow-hidden group">
                     <video
+                        ref={videoRef}
                         src="/video-biceps-opt.mp4"
                         poster="/hero-cinematic.png"
                         autoPlay
