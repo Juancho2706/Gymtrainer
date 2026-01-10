@@ -9,6 +9,13 @@ const Services = () => {
 
     const prices = [
         {
+            title: "MEDIUM",
+            price: "$130.000",
+            features: ["PLAN + DIETA", "COACHING 24/7"],
+            details: "PACK COMPLETO. ENTRENAMIENTO Y NUTRICIÓN.",
+            highlight: true,
+        },
+        {
             title: "ONLINE",
             price: "$35.000",
             features: ["PLAN PDF", "DUDAS ONLINE"],
@@ -21,18 +28,10 @@ const Services = () => {
             details: "SEGUIMIENTO WHATSAPP. SIN NUTRICIÓN.",
         },
         {
-            title: "MEDIUM",
-            price: "$130.000",
-            features: ["PLAN + DIETA", "COACHING 24/7"],
-            details: "PACK COMPLETO. ENTRENAMIENTO Y NUTRICIÓN.",
-            highlight: true,
-        },
-        {
             title: "FULL PRO",
             price: "$180.000",
             features: ["PRESENCIAL 1:1", "DIETA", "ELITE"],
             details: "EXPERIENCIA TOTAL. CORRECCIÓN IN SITU.",
-            bg: "bg-white text-black",
         },
     ];
 
@@ -50,13 +49,16 @@ const Services = () => {
                         <div
                             key={idx}
                             className={`
-                            relative border border-white p-12 flex flex-col justify-between group transition-all duration-300 hover:bg-neutral-900 group
-                            ${plan.highlight ? 'bg-neutral-900' : ''}
+                            relative p-12 flex flex-col justify-between group transition-all duration-300 group
+                            ${plan.highlight
+                                    ? 'bg-neutral-900 border-2 border-red-600 z-10 scale-[1.02] shadow-[0_0_30px_rgba(220,38,38,0.2)]'
+                                    : 'border border-white hover:bg-neutral-900'
+                                }
                             ${plan.bg ? 'bg-white text-black hover:border-white' : ''}
                         `}
                         >
                             {plan.highlight && (
-                                <div className="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-3 py-1 uppercase tracking-widest">
+                                <div className="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-3 py-1 uppercase tracking-widest translate-y-[-50%] border border-black shadow-lg">
                                     RECOMENDADO
                                 </div>
                             )}

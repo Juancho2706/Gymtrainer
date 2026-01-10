@@ -1,8 +1,20 @@
 "use client";
 
+import { useRef } from 'react'; // Added useRef
 import Image from 'next/image';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 const About = () => {
+    const sectionRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: sectionRef,
+        offset: ["center end", "center start"]
+    });
+
+    // Map scroll range to grayscale values: 
+    // Start (entering): 1 (gray) -> Center: 0 (color) -> End (leaving): 1 (gray)
+    const grayscale = useTransform(scrollYProgress, [0, 0.5, 1], ["grayscale(100%)", "grayscale(0%)", "grayscale(100%)"]);
+
     return (
         <section id="about" className="bg-white text-black border-b-2 border-black">
             <div className="grid grid-cols-1 md:grid-cols-2">
@@ -41,20 +53,27 @@ const About = () => {
                 </div>
 
                 {/* RIGHT: IMAGE */}
-                <div className="relative min-h-[500px] overflow-hidden bg-black group">
-                    <Image
-                        src="/trainer-portrait.jpeg"
-                        alt="Roberto Carrasco - Entrenador"
-                        fill
-                        // Transition: Grayscale by default, color on hover
-                        className="object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-out"
-                    />
+                <div
+                    ref={sectionRef}
+                    className="relative min-h-[500px] overflow-hidden bg-black group"
+                >
+                    <motion.div
+                        style={{ filter: grayscale }}
+                        className="relative w-full h-full"
+                    >
+                        <Image
+                            src="/trainer-portrait.jpeg"
+                            alt="Roberto Carrasco - Entrenador"
+                            fill
+                            className="object-cover transition-all duration-700 ease-out"
+                        />
+                    </motion.div>
 
-                    <div className="absolute inset-0 bg-red-600 mix-blend-multiply opacity-20 group-hover:opacity-0 transition-opacity duration-700"></div>
+                    <div className="absolute inset-0 bg-red-600 mix-blend-multiply opacity-20 group-hover:opacity-0 transition-opacity duration-700 pointer-events-none"></div>
                     <div className="absolute inset-0 opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay pointer-events-none"></div>
 
                     {/* Overlay Text */}
-                    <div className="absolute bottom-0 left-0 w-full p-8">
+                    <div className="absolute bottom-0 left-0 w-full p-8 z-10">
                         <h3 className="text-white text-8xl font-black leading-none opacity-20 group-hover:opacity-100 transition-opacity duration-500 select-none drop-shadow-lg">
                             LÍDER
                         </h3>

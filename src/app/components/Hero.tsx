@@ -1,18 +1,28 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 const Hero = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
+    const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
     useEffect(() => {
+        // Check if video is already ready (e.g. from cache)
+        if (videoRef.current && videoRef.current.readyState >= 3) {
+            setIsVideoLoaded(true);
+        }
+
         // Force play on mount to bypass some mobile autoplay restrictions
         if (videoRef.current) {
             videoRef.current.play().catch(error => {
                 console.log("Autoplay prevented by browser:", error);
             });
         }
+
+        // Safety timeout: If video takes too long or event fails, show it anyway after 2s
+        const timer = setTimeout(() => setIsVideoLoaded(true), 2000);
+        return () => clearTimeout(timer);
     }, []);
 
     return (
@@ -52,16 +62,22 @@ const Hero = () => {
                 </div>
 
                 {/* IMAGE COLUMN */}
-                <div className="col-span-1 md:col-span-5 relative border-b md:border-b-0 border-white h-[50vh] md:h-auto overflow-hidden group">
+                <div className="col-span-1 md:col-span-5 relative border-b md:border-b-0 border-white h-[50vh] md:h-auto overflow-hidden group bg-black">
+                    {/* Blocker Overlay for smooth transition */}
+                    <div
+                        className={`absolute inset-0 bg-black z-20 transition-opacity duration-1000 ease-out pointer-events-none ${isVideoLoaded ? 'opacity-0' : 'opacity-100'}`}
+                    ></div>
+
                     <video
                         ref={videoRef}
                         src="/FINAL.mp4" // Re-encoded for max compatibility (H.264 Baseline)
-                        poster="/hero-cinematic.png" // Fallback for low-power mode / blocked autoplay
+                        // Poster removed for black transition
                         autoPlay
                         loop
                         muted
                         playsInline
-                        className="absolute inset-0 w-full h-full object-cover grayscale contrast-125 brightness-75 group-hover:scale-105 transition-transform duration-700 ease-out"
+                        onLoadedData={() => setIsVideoLoaded(true)}
+                        className={`absolute inset-0 w-full h-full object-cover grayscale contrast-125 brightness-75 group-hover:scale-105 transition-transform duration-700 ease-out ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}`}
                     />
                     <div className="absolute inset-0 bg-red-600 mix-blend-multiply opacity-50"></div>
                     <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-30 mix-blend-overlay"></div>
