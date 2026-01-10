@@ -42,19 +42,19 @@ const About = () => {
 
                 {/* RIGHT: IMAGE */}
                 <div className="relative min-h-[500px] overflow-hidden bg-black group">
-                    {/* Simulated Trainer Image */}
-                    <div className="absolute inset-0 bg-neutral-800 flex items-center justify-center">
-                        <div className="text-white text-center opacity-50">
-                            <span className="block text-9xl font-black opacity-10">RCN</span>
-                            <span className="uppercase tracking-[1em] text-sm mt-4">Retrato Entrenador</span>
-                        </div>
-                    </div>
-
+                    <Image 
+                        src="/trainer-portrait.jpeg"
+                        alt="Roberto Carrasco - Entrenador"
+                        fill
+                        className="object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-out"
+                    />
+                    
+                    <div className="absolute inset-0 bg-red-600 mix-blend-multiply opacity-20 group-hover:opacity-0 transition-opacity duration-700"></div>
                     <div className="absolute inset-0 opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay pointer-events-none"></div>
 
                     {/* Overlay Text */}
                     <div className="absolute bottom-0 left-0 w-full p-8">
-                        <h3 className="text-white text-8xl font-black leading-none opacity-20 group-hover:opacity-100 transition-opacity duration-500 select-none">
+                        <h3 className="text-white text-8xl font-black leading-none opacity-20 group-hover:opacity-100 transition-opacity duration-500 select-none drop-shadow-lg">
                             LÍDER
                         </h3>
                     </div>

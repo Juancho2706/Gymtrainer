@@ -41,11 +41,13 @@ const Hero = () => {
 
                 {/* IMAGE COLUMN */}
                 <div className="col-span-1 md:col-span-5 relative border-b md:border-b-0 border-white h-[50vh] md:h-auto overflow-hidden group">
-                    <Image
-                        src="/hero-cinematic.png"
-                        alt="Gym"
-                        fill
-                        className="object-cover grayscale contrast-125 brightness-75 group-hover:scale-105 transition-transform duration-700 ease-out"
+                    <video
+                        src="/video-biceps-opt.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="absolute inset-0 w-full h-full object-cover grayscale contrast-125 brightness-75 group-hover:scale-105 transition-transform duration-700 ease-out"
                     />
                     <div className="absolute inset-0 bg-red-600 mix-blend-multiply opacity-50"></div>
                     <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-30 mix-blend-overlay"></div>
