@@ -5,11 +5,11 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/segundapagina",
-        destination: "https://gymtrainer-71qwxx0qu-juancho2706s-projects.vercel.app/segundapagina",
+        destination: "https://gymtrainer-git-opcion2-juancho2706s-projects.vercel.app/segundapagina",
       },
       {
         source: "/segundapagina/:path*",
-        destination: "https://gymtrainer-71qwxx0qu-juancho2706s-projects.vercel.app/segundapagina/:path*",
+        destination: "https://gymtrainer-git-opcion2-juancho2706s-projects.vercel.app/segundapagina/:path*",
       },
     ];
   },
