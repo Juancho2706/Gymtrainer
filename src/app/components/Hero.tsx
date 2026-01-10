@@ -10,10 +10,11 @@ const Hero = () => {
             {/* BACKGROUND LAYER */}
             <div className="absolute inset-0 z-0">
                 <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
+                    autoPlay={true}
+                    loop={true}
+                    muted={true}
+                    playsInline={true}
+                    poster="/hero-cinematic.png"
                     className="absolute w-full h-full object-cover opacity-40 grayscale contrast-125"
                 >
                     <source src="/video-biceps-opt.mp4" type="video/mp4" />
