@@ -43,6 +43,7 @@ const Hero = () => {
                 <div className="col-span-1 md:col-span-5 relative border-b md:border-b-0 border-white h-[50vh] md:h-auto overflow-hidden group">
                     <video
                         src="/video-biceps-opt.mp4"
+                        poster="/hero-cinematic.png"
                         autoPlay
                         loop
                         muted
