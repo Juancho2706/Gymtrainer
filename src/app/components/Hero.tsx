@@ -1,21 +1,33 @@
 "use client";
 import { motion } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 const Hero = () => {
+    const [videoLoaded, setVideoLoaded] = useState(false);
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    useEffect(() => {
+        if (videoRef.current && videoRef.current.readyState >= 3) {
+            setVideoLoaded(true);
+        }
+    }, []);
+
     return (
         <section id="hero" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-onyx">
 
             {/* BACKGROUND LAYER */}
             <div className="absolute inset-0 z-0">
                 <video
+                    ref={videoRef}
                     autoPlay={true}
                     loop={true}
                     muted={true}
                     playsInline={true}
-                    poster="/segundapagina/hero-cinematic.png"
-                    className="absolute w-full h-full object-cover opacity-40 grayscale contrast-125"
+                    onCanPlay={() => setVideoLoaded(true)}
+                    onLoadedData={() => setVideoLoaded(true)}
+                    className={`absolute w-full h-full object-cover grayscale contrast-125 transition-opacity duration-1000 ${videoLoaded ? 'opacity-40' : 'opacity-0'}`}
                 >
                     <source src="/segundapagina/VIDEO FINAL.mp4" type="video/mp4" />
                 </video>

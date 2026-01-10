@@ -5,10 +5,18 @@ const Services = () => {
     // Helper to build WhatsApp URL
     const getWhatsAppUrl = (planName: string) => {
         const message = `Hola Roberto, me interesa contratar el plan *${planName}*.`;
-        return `https://wa.me/56900000000?text=${encodeURIComponent(message)}`;
+        return `https://wa.me/56976691584?text=${encodeURIComponent(message)}`;
     };
 
     const prices = [
+        {
+            title: "MEDIUM",
+            price: "$130.000",
+            features: ["PLAN + DIETA", "COACHING 24/7"],
+            details: "PACK COMPLETO. ENTRENAMIENTO Y NUTRICIÓN.",
+            highlight: true,
+            special: true,
+        },
         {
             title: "ONLINE",
             price: "$35.000",
@@ -24,19 +32,12 @@ const Services = () => {
             highlight: false
         },
         {
-            title: "MEDIUM",
-            price: "$130.000",
-            features: ["PLAN + DIETA", "COACHING 24/7"],
-            details: "PACK COMPLETO. ENTRENAMIENTO Y NUTRICIÓN.",
-            highlight: true,
-        },
-        {
             title: "FULL PRO",
             price: "$180.000",
             features: ["PRESENCIAL 1:1", "DIETA", "ELITE"],
             details: "EXPERIENCIA TOTAL. CORRECCIÓN IN SITU.",
             highlight: false,
-            special: true
+            special: false
         },
     ];
 

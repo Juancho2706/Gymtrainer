@@ -15,7 +15,7 @@ const Footer = () => {
                             No esperes el momento perfecto. Toma el control de tu realidad hoy.
                             Únete al protocolo Olympus Wolf y transfórmate.
                         </p>
-                        <a href="https://instagram.com" className="btn-kinetic inline-block hover:scale-105 transition-transform">
+                        <a href="https://www.instagram.com/the.olympus.wolf/" target="_blank" className="btn-kinetic inline-block hover:scale-105 transition-transform">
                             INSTAGRAM
                         </a>
                     </div>
@@ -43,11 +43,12 @@ const Footer = () => {
 
                         {/* SOCIALS */}
                         <div className="flex gap-4 mt-12 md:mt-0">
-                            {['INSTAGRAM', 'TIKTOK', 'WHATSAPP'].map((social) => (
-                                <a key={social} href="#" className="text-xs font-mono border border-white/20 px-4 py-2 hover:bg-neon-lime hover:text-onyx hover:border-neon-lime transition-all">
-                                    {social}
-                                </a>
-                            ))}
+                            <a href="https://www.instagram.com/the.olympus.wolf/" target="_blank" className="text-xs font-mono border border-white/20 px-4 py-2 hover:bg-neon-lime hover:text-onyx hover:border-neon-lime transition-all">
+                                INSTAGRAM (TRAINER)
+                            </a>
+                            <a href="https://www.instagram.com/r.missa.c._/" target="_blank" className="text-xs font-mono border border-white/20 px-4 py-2 hover:bg-neon-lime hover:text-onyx hover:border-neon-lime transition-all">
+                                INSTAGRAM (LOGROS)
+                            </a>
                         </div>
                     </div>
                 </div>

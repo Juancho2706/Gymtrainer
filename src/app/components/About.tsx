@@ -1,8 +1,20 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import Image from "next/image";
 
 const About = () => {
+    const imageRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: imageRef,
+        offset: ["start end", "end start"]
+    });
+
+    // 0 -> 1 (grayscale) at start
+    // 0.5 -> 0 (color) at center
+    // 1 -> 1 (grayscale) at end
+    const grayscale = useTransform(scrollYProgress, [0, 0.5, 1], ["grayscale(100%)", "grayscale(0%)", "grayscale(100%)"]);
+
     return (
         <section id="about" className="bg-white text-onyx relative overflow-hidden">
             {/* Diagonal Slice */}
@@ -58,14 +70,16 @@ const About = () => {
                     {/* IMAGE / VISUAL */}
                     <div className="order-1 lg:order-2 relative h-[600px] w-full bg-onyx clip-path-polygon group overflow-hidden">
                         {/* Placeholder for trainer image */}
-                        <div className="absolute inset-0 bg-neutral-900">
-                            <Image
-                                src="/segundapagina/trainer-portrait.jpeg"
-                                alt="Roberto Carrasco - Entrenador"
-                                fill
-                                className="object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700 ease-out"
-                                priority
-                            />
+                        <div className="absolute inset-0 bg-neutral-900" ref={imageRef}>
+                            <motion.div style={{ filter: grayscale }} className="w-full h-full relative">
+                                <Image
+                                    src="/segundapagina/trainer-portrait.jpeg"
+                                    alt="Roberto Carrasco - Entrenador"
+                                    fill
+                                    className="object-cover"
+                                    priority
+                                />
+                            </motion.div>
                         </div>
 
                         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-40 mix-blend-overlay"></div>
