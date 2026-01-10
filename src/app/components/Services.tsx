@@ -54,7 +54,6 @@ const Services = () => {
                                     ? 'bg-neutral-900 border-2 border-red-600 z-10 scale-[1.02] shadow-[0_0_30px_rgba(220,38,38,0.2)]'
                                     : 'border border-white hover:bg-neutral-900'
                                 }
-                            ${plan.bg ? 'bg-white text-black hover:border-white' : ''}
                         `}
                         >
                             {plan.highlight && (
@@ -64,19 +63,19 @@ const Services = () => {
                             )}
 
                             <div>
-                                <h3 className={`text-4xl font-black uppercase mb-2 ${plan.bg ? 'text-black group-hover:text-white' : 'text-white'}`}>{plan.title}</h3>
-                                <div className={`text-2xl font-mono mb-6 ${plan.bg ? 'text-red-600' : 'text-red-500'}`}>{plan.price}</div>
+                                <h3 className="text-4xl font-black uppercase mb-2 text-white">{plan.title}</h3>
+                                <div className="text-2xl font-mono mb-6 text-red-500">{plan.price}</div>
 
                                 <ul className="mb-8 space-y-2">
                                     {plan.features.map((f, i) => (
-                                        <li key={i} className={`text-sm font-bold uppercase tracking-wider flex items-center gap-2 ${plan.bg ? 'text-gray-800 group-hover:text-gray-300' : 'text-gray-400'}`}>
+                                        <li key={i} className="text-sm font-bold uppercase tracking-wider flex items-center gap-2 text-gray-400">
                                             <span className="w-1 h-1 bg-red-600 rounded-full"></span>
                                             {f}
                                         </li>
                                     ))}
                                 </ul>
 
-                                <p className={`text-[10px] uppercase font-mono mb-8 border-t border-dashed pt-4 opacity-70 ${plan.bg ? 'border-black group-hover:border-white group-hover:text-white' : 'border-white'}`}>
+                                <p className="text-[10px] uppercase font-mono mb-8 border-t border-dashed pt-4 opacity-70 border-white">
                                     {plan.details}
                                 </p>
                             </div>
@@ -85,13 +84,7 @@ const Services = () => {
                                 href={getWhatsAppUrl(plan.title)}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`
-                                w-full py-4 font-black uppercase tracking-widest text-center border-2 transition-all
-                                ${plan.bg
-                                        ? 'border-black text-black hover:bg-white hover:text-black group-hover:border-white group-hover:text-white group-hover:hover:text-black'
-                                        : 'border-white text-white hover:bg-white hover:text-black'
-                                    }
-                            `}
+                                className="w-full py-4 font-black uppercase tracking-widest text-center border-2 transition-all border-white text-white hover:bg-white hover:text-black"
                             >
                                 CONTRATAR
                             </a>
