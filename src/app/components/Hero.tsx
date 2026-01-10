@@ -14,10 +14,10 @@ const Hero = () => {
                     loop={true}
                     muted={true}
                     playsInline={true}
-                    poster="/hero-cinematic.png"
+                    poster="/segundapagina/hero-cinematic.png"
                     className="absolute w-full h-full object-cover opacity-40 grayscale contrast-125"
                 >
-                    <source src="/video-biceps-opt.mp4" type="video/mp4" />
+                    <source src="/segundapagina/VIDEO FINAL.mp4" type="video/mp4" />
                 </video>
                 <div className="absolute inset-0 bg-gradient-to-t from-onyx via-onyx/50 to-transparent"></div>
                 <div className="text-neon-bg absolute inset-0 opacity-10 mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
