@@ -28,21 +28,24 @@ const About = () => {
                         ROBERTO<br /><span className="text-red-600">CARRASCO</span>
                     </h2>
 
-                    <div className="space-y-6 text-lg md:text-xl font-medium leading-relaxed max-w-xl">
+                    <div className="space-y-4 text-lg md:text-xl font-medium leading-relaxed max-w-xl">
                         <p>
-                            <strong className="bg-black text-white px-1">UVM TITULADO.</strong> No soy un influencer. Soy un profesional del deporte.
-                            Mi enfoque combina la ciencia del rendimiento con la brutalidad del esfuerzo real.
+                            <strong className="bg-black text-white px-1">SOY ROBERTO CARRASCO.</strong> Entrenador Personal con un enfoque en hipertrofia muscular y certificado en Entrenamiento para Mujeres.
                         </p>
                         <p>
-                            10 años forjando atletas. Sin atajos. Sin mentiras.
-                            Si buscas una palmadita en la espalda, busca otro lugar.
-                            Si buscas resultados, bienvenido a la manada.
+                            Mi método va más allá de la estética, busco una transformación integral. No solo esculpiremos el cuerpo que sueñas, sino que instauraremos hábitos saludables y fortaleceremos tu mentalidad.
+                        </p>
+                        <p>
+                            Como tu coach, mi compromiso es ayudarte a romper barreras, confiar en tu verdadero potencial y llevarte por el camino de la evolución personal.
+                        </p>
+                        <p className="font-black pt-2 border-l-4 border-red-600 pl-4">
+                            DEJA DE PONERTE LÍMITES. ES HORA DE ENTRENAR CON PROPÓSITO Y CONSEGUIR RESULTADOS REALES.
                         </p>
                     </div>
 
                     <div className="grid grid-cols-2 gap-4 mt-12">
                         <div className="border border-black p-4 bg-gray-100">
-                            <span className="block text-4xl font-black">10+</span>
+                            <span className="block text-4xl font-black">2.5+</span>
                             <span className="text-xs uppercase tracking-widest">AÑOS EXP</span>
                         </div>
                         <div className="border border-black p-4 bg-gray-100">
