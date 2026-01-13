@@ -55,9 +55,9 @@ const reviews = [
 ];
 
 const ReviewCard = ({ review }: { review: typeof reviews[0] }) => (
-    <div className="w-[350px] md:w-[450px] flex-shrink-0 mx-4 p-8 bg-white/5 border border-white/10 backdrop-blur-md rounded-xl hover:border-neon-lime/50 transition-colors group">
+    <div className="w-[350px] md:w-[450px] flex-shrink-0 mx-4 p-8 bg-white/5 border border-white/10 backdrop-blur-md rounded-xl hover:border-neon-red/50 transition-colors group">
         <div className="flex items-center gap-4 mb-6">
-            <div className="relative w-12 h-12 rounded-full overflow-hidden border border-white/20 group-hover:border-neon-lime transition-colors">
+            <div className="relative w-12 h-12 rounded-full overflow-hidden border border-white/20 group-hover:border-neon-red transition-colors">
                 <Image
                     src={review.image}
                     alt={review.name}
@@ -68,10 +68,10 @@ const ReviewCard = ({ review }: { review: typeof reviews[0] }) => (
             <div>
                 <h4 className="text-lg font-bold uppercase text-white leading-none mb-1">{review.name}</h4>
                 <div className="flex items-center gap-2">
-                    <span className="text-xs text-neon-lime font-mono uppercase tracking-widest">{review.role}</span>
+                    <span className="text-xs text-neon-red font-mono uppercase tracking-widest">{review.role}</span>
                     <div className="flex gap-0.5">
                         {[...Array(review.stars)].map((_, i) => (
-                            <div key={i} className="w-1 h-1 bg-neon-lime rounded-full" />
+                            <div key={i} className="w-1 h-1 bg-neon-red rounded-full" />
                         ))}
                     </div>
                 </div>
@@ -89,9 +89,9 @@ const Reviews = () => {
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
 
             <div className="container mx-auto px-6 mb-20 flex flex-col items-center text-center relative z-10">
-                <span className="text-neon-lime font-mono text-sm tracking-[0.3em] uppercase mb-4">/ Officers & Elite</span>
+                <span className="text-neon-red font-mono text-sm tracking-[0.3em] uppercase mb-4">/ Officers & Elite</span>
                 <h2 className="text-5xl md:text-7xl font-black uppercase text-white tracking-tighter">
-                    LA MANADA <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-lime to-transparent">HABLA</span>
+                    LA MANADA <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-red to-transparent">HABLA</span>
                 </h2>
             </div>
 
@@ -108,10 +108,10 @@ const Reviews = () => {
                 </div>
             </div>
 
-            <div className="mt-8 border-t border-white/10 py-2 bg-neon-lime/5 transform -rotate-1">
+            <div className="mt-8 border-t border-white/10 py-2 bg-neon-red/5 transform -rotate-1">
                 <div className="flex animate-marquee-reverse whitespace-nowrap">
                     {[...Array(10)].map((_, i) => (
-                        <span key={i} className="text-xs font-mono text-neon-lime/50 uppercase tracking-[0.5em] px-8">
+                        <span key={i} className="text-xs font-mono text-neon-red/50 uppercase tracking-[0.5em] px-8">
                             /// RESULTADOS REALES /// SIN EXCUSAS /// OLYMPUS PROTOCOL ///
                         </span>
                     ))}

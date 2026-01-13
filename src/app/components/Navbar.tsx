@@ -30,12 +30,12 @@ export default function Navbar() {
                 className={`fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 transition-all duration-300 pointer-events-none`}
             >
                 <div
-                    className={`bg-onyx/80 backdrop-blur-xl border border-white/10 px-8 py-3 rounded-full flex items-center justify-between gap-12 pointer-events-auto transition-all duration-500 hover:border-neon-lime/50 shadow-2xl shadow-black/50 ${scrolled ? "w-[90%] md:w-auto scale-95" : "w-[95%] md:w-[800px]"
+                    className={`bg-onyx/80 backdrop-blur-xl border border-white/10 px-8 py-3 rounded-full flex items-center justify-between gap-12 pointer-events-auto transition-all duration-500 hover:border-neon-red/50 shadow-2xl shadow-black/50 ${scrolled ? "w-[90%] md:w-auto scale-95" : "w-[95%] md:w-[800px]"
                         }`}
                 >
                     <Link href="/" className="group flex items-center gap-2">
-                        <span className="text-2xl font-black italic tracking-tighter text-white group-hover:text-neon-lime transition-colors">
-                            OLYMPUS<span className="text-neon-lime">WOLF</span>
+                        <span className="text-2xl font-black italic tracking-tighter text-white group-hover:text-neon-red transition-colors">
+                            OLYMPUS<span className="text-neon-red">WOLF</span>
                         </span>
                     </Link>
 
@@ -53,8 +53,7 @@ export default function Navbar() {
 
                     <Link
                         href="#contact"
-                        className="hidden md:block bg-neon-lime text-onyx px-5 py-2 font-bold text-xs uppercase tracking-widest hover:bg-white hover:scale-105 transition-all w-[140px] text-center clip-path-slant"
-                        style={{ clipPath: "polygon(10% 0, 100% 0, 100% 100%, 0% 100%)" }}
+                        className="hidden md:block bg-neon-red text-onyx px-5 py-2 font-bold text-xs uppercase tracking-widest hover:bg-white hover:scale-105 transition-all w-[140px] text-center rounded-full"
                     >
                         Únete Ahora
                     </Link>
@@ -70,7 +69,7 @@ export default function Navbar() {
                         />
                         <motion.span
                             animate={mobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-                            className="w-6 h-0.5 bg-neon-lime transition-opacity"
+                            className="w-6 h-0.5 bg-neon-red transition-opacity"
                         />
                         <motion.span
                             animate={mobileMenuOpen ? { rotate: -45, y: -6, width: "2rem" } : { rotate: 0, y: 0, width: "1rem" }}
@@ -100,7 +99,7 @@ export default function Navbar() {
                                 >
                                     <Link
                                         href={link.href}
-                                        className="text-4xl font-black italic tracking-tighter text-white hover:text-neon-lime transition-colors uppercase"
+                                        className="text-4xl font-black italic tracking-tighter text-white hover:text-neon-red transition-colors uppercase"
                                         onClick={() => setMobileMenuOpen(false)}
                                     >
                                         {link.name}

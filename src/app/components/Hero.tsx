@@ -50,12 +50,13 @@ const Hero = () => {
                     </motion.div>
                     <br className="hidden md:block" />
                     <motion.div
-                        className="inline-block text-neon-lime drop-shadow-[0_0_15px_rgba(204,255,0,0.6)]"
+                        className="inline-flex gap-6 text-neon-red drop-shadow-[0_0_15px_rgba(229,57,53,0.6)]"
                         initial={{ scale: 0.8, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ delay: 0.5, type: "spring" }}
                     >
-                        TU REALIDAD
+                        <span className="text-white">TU</span>
+                        <span>REALIDAD</span>
                     </motion.div>
                 </motion.div>
 
@@ -64,7 +65,7 @@ const Hero = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1, duration: 1 }}
-                    className="max-w-xl text-lg md:text-2xl text-gray-300 font-medium tracking-widest uppercase mb-12 border-l-4 border-neon-lime pl-6 text-left"
+                    className="max-w-xl text-lg md:text-2xl text-gray-300 font-medium tracking-widest uppercase mb-12 border-l-4 border-neon-red pl-6 text-left"
                 >
                     No excusas. Solo resultados puros.
                     <br />
@@ -101,7 +102,7 @@ const Hero = () => {
                 className="absolute bottom-10 right-10 hidden lg:block"
             >
                 <div className="glass-panel p-6 max-w-xs transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                    <h4 className="text-neon-lime font-mono text-xs mb-2">/ SYSTEM STATUS</h4>
+                    <h4 className="text-neon-red font-mono text-xs mb-2">/ SYSTEM STATUS</h4>
                     <div className="text-4xl font-black text-white mb-1">100%</div>
                     <div className="text-sm text-gray-400 uppercase tracking-widest">COMPROMISO REQUERIDO</div>
                 </div>

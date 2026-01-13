@@ -5,8 +5,8 @@
 :root {
   --background: #0a0a0a;
   --foreground: #ffffff;
-  --primary: #ccff00;
-  /* Neon Lime */
+  --primary: #E53935;
+  /* Neon Red */
 }
 
 @layer base {
@@ -15,7 +15,7 @@
   }
 
   body {
-    @apply bg-onyx text-white antialiased overflow-x-hidden selection:bg-neon-lime selection:text-onyx;
+    @apply bg-onyx text-white antialiased overflow-x-hidden selection:bg-neon-red selection:text-white;
     font-family: 'Inter', sans-serif;
   }
 
@@ -38,16 +38,16 @@
 
   /* KINETIC UTILITIES */
   .text-neon {
-    @apply text-neon-lime drop-shadow-[0_0_8px_rgba(204, 255, 0, 0.5)];
+    @apply text-neon-red drop-shadow-[0_0_8px_rgba(229, 57, 53, 0.5)];
   }
 
   .border-neon {
-    @apply border-neon-lime shadow-[0_0_10px_rgba(204, 255, 0, 0.3)];
+    @apply border-neon-red shadow-[0_0_10px_rgba(229, 57, 53, 0.3)];
   }
 
   /* BUTTONS */
   .btn-kinetic {
-    @apply relative px-8 py-3 bg-neon-lime text-onyx font-bold uppercase tracking-widest hover:bg-white transition-all duration-300;
+    @apply relative px-8 py-3 bg-neon-red text-white font-bold uppercase tracking-widest hover:bg-white hover:text-onyx transition-all duration-300;
     clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
   }
 
@@ -80,5 +80,5 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ccff00;
+  background: #E53935;
 }

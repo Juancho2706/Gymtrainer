@@ -9,7 +9,7 @@ const Footer = () => {
                     <div>
                         <h3 className="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.8] mb-8">
                             ÚNETE<br />
-                            <span className="text-neon-lime">AHORA</span>
+                            <span className="text-neon-red">AHORA</span>
                         </h3>
                         <p className="max-w-md text-gray-400 font-mono text-sm mb-8">
                             No esperes el momento perfecto. Toma el control de tu realidad hoy.
@@ -24,7 +24,7 @@ const Footer = () => {
                     <div className="flex flex-col justify-between">
                         <div className="grid grid-cols-2 gap-8">
                             <div>
-                                <h4 className="text-neon-lime font-bold uppercase tracking-widest mb-6 text-xs">Navegación</h4>
+                                <h4 className="text-neon-red font-bold uppercase tracking-widest mb-6 text-xs">Navegación</h4>
                                 <ul className="space-y-4 text-sm font-bold text-gray-300">
                                     <li><a href="#hero" className="hover:text-white transition-colors">INICIO</a></li>
                                     <li><a href="#about" className="hover:text-white transition-colors">FILOSOFÍA</a></li>
@@ -33,7 +33,7 @@ const Footer = () => {
                                 </ul>
                             </div>
                             <div>
-                                <h4 className="text-neon-lime font-bold uppercase tracking-widest mb-6 text-xs">Legal</h4>
+                                <h4 className="text-neon-red font-bold uppercase tracking-widest mb-6 text-xs">Legal</h4>
                                 <ul className="space-y-4 text-sm font-bold text-gray-300">
                                     <li><a href="#" className="hover:text-white transition-colors">TERMINOS</a></li>
                                     <li><a href="#" className="hover:text-white transition-colors">PRIVACIDAD</a></li>
@@ -43,10 +43,10 @@ const Footer = () => {
 
                         {/* SOCIALS */}
                         <div className="flex gap-4 mt-12 md:mt-0">
-                            <a href="https://www.instagram.com/the.olympus.wolf/" target="_blank" className="text-xs font-mono border border-white/20 px-4 py-2 hover:bg-neon-lime hover:text-onyx hover:border-neon-lime transition-all">
+                            <a href="https://www.instagram.com/the.olympus.wolf/" target="_blank" className="text-xs font-mono border border-white/20 px-4 py-2 hover:bg-neon-red hover:text-onyx hover:border-neon-red transition-all">
                                 INSTAGRAM (TRAINER)
                             </a>
-                            <a href="https://www.instagram.com/r.missa.c._/" target="_blank" className="text-xs font-mono border border-white/20 px-4 py-2 hover:bg-neon-lime hover:text-onyx hover:border-neon-lime transition-all">
+                            <a href="https://www.instagram.com/r.missa.c._/" target="_blank" className="text-xs font-mono border border-white/20 px-4 py-2 hover:bg-neon-red hover:text-onyx hover:border-neon-red transition-all">
                                 INSTAGRAM (LOGROS)
                             </a>
                         </div>
@@ -63,7 +63,7 @@ const Footer = () => {
                     <div className="text-right">
                         <p className="text-[10px] font-mono text-gray-600 uppercase">
                             © 2026 OLYMPUS WOLF. ALL RIGHTS RESERVED.<br />
-                            SYSTEM V3.0
+                            Hecho por webdevjv
                         </p>
                     </div>
                 </div>

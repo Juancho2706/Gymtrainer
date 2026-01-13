@@ -31,32 +31,34 @@ const About = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
                         >
-                            <div className="inline-block border-l-4 border-neon-lime pl-4 mb-8">
+                            <div className="inline-block border-l-4 border-neon-red pl-4 mb-8">
                                 <span className="font-bold uppercase tracking-[0.2em] text-sm text-gray-500">
                                     THE MIND BEHIND
                                 </span>
                             </div>
 
                             <h2 className="text-6xl md:text-8xl font-black uppercase mb-8 leading-[0.85] tracking-tighter mix-blend-multiply">
-                                ROBERTO<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-lime to-emerald-600">CARRASCO</span>
+                                ROBERTO<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-red to-gray-600">CARRASCO</span>
                             </h2>
 
                             <div className="space-y-6 text-lg md:text-xl font-medium leading-relaxed max-w-xl text-gray-800">
                                 <p>
-                                    <strong className="bg-onyx text-white px-2 py-0.5 transform -skew-x-12 inline-block mr-2">UVM TITULADO.</strong>
-                                    No soy un influencer. Soy un profesional del deporte.
-                                    Mi enfoque combina la ciencia del rendimiento con la brutalidad del esfuerzo real.
+                                    Soy <strong className="text-onyx transform inline-block">Roberto Carrasco</strong>, Entrenador Personal con un enfoque en <span className="text-neon-red font-bold">hipertrofia muscular</span> y certificado en Entrenamiento para Mujeres.
                                 </p>
                                 <p>
-                                    10 años forjando atletas. Sin atajos. Sin mentiras.
-                                    Si buscas una palmadita en la espalda, busca otro lugar.
-                                    Si buscas resultados, <span className="underline decoration-neon-lime decoration-4 underline-offset-4">bienvenido a la manada.</span>
+                                    Mi método va más allá de la estética, busco una <strong>transformación integral</strong>. No solo te guiaré para esculpir el cuerpo que sueñas, sino que trabajaremos juntos para instaurar hábitos saludables y fortalecer tu mentalidad.
+                                </p>
+                                <p>
+                                    Como tu coach, mi compromiso es ayudarte a romper tus barreras, confiar en tu verdadero potencial y llevarte por el camino de la evolución personal.
+                                </p>
+                                <p className="border-l-4 border-neon-red pl-4 italic text-gray-600">
+                                    Deja de ponerte límites. Es hora de entrenar con propósito y <strong className="text-onyx uppercase not-italic">conseguir resultados reales.</strong>
                                 </p>
                             </div>
 
                             <div className="flex gap-8 mt-12">
                                 <div>
-                                    <span className="block text-5xl font-black tracking-tighter">10+</span>
+                                    <span className="block text-5xl font-black tracking-tighter">+2.5</span>
                                     <span className="text-xs font-bold uppercase tracking-widest text-gray-500">AÑOS EXP</span>
                                 </div>
                                 <div>
@@ -85,7 +87,7 @@ const About = () => {
                         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-40 mix-blend-overlay"></div>
 
                         {/* Hover Effect */}
-                        <div className="absolute inset-0 bg-neon-lime/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out mix-blend-overlay"></div>
+                        <div className="absolute inset-0 bg-neon-red/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out mix-blend-overlay"></div>
 
                         <div className="absolute bottom-10 right-10 text-right">
                             <h3 className="text-white text-7xl font-black leading-none opacity-20 group-hover:opacity-100 transition-opacity duration-500 select-none">

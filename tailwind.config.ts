@@ -13,7 +13,7 @@ const config: Config = {
                 foreground: "var(--foreground)",
                 onyx: "#0a0a0a",
                 charcoal: "#121212",
-                "neon-lime": "#ccff00",
+                "neon-red": "#E53935",
                 "dim-gray": "#9ca3af",
             },
             fontFamily: {
