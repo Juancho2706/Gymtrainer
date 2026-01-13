@@ -29,27 +29,24 @@ const Hero = () => {
             </div>
 
             <div className="relative z-20 container mx-auto px-4 text-center">
-                {/* Floating Logo */}
-                <div className="mb-10 flex justify-center">
-                    <FadeIn delay={0.2} direction="down" className="w-48 h-48 md:w-64 md:h-64 relative animate-float">
-                        <div className="absolute inset-0 rounded-full bg-red-600 blur-[80px] opacity-40 animate-pulse"></div>
+                {/* Centered Logo */}
+                <div className="mb-8 flex justify-center">
+                    <FadeIn
+                        delay={0.2}
+                        direction="down"
+                        className="w-72 h-72 md:w-[28rem] md:h-[28rem] relative animate-float"
+                    >
                         <Image
-                            src="/olympus-logo.jpg"
+                            src="/hero-logo-v2.png"
                             alt="Logo de Olympus Wolf"
                             fill
-                            className="object-cover rounded-full border-2 border-white/10 shadow-2xl relative z-10"
+                            className="object-contain relative z-10 drop-shadow-[0_0_15px_rgba(220,38,38,0.5)] [mask-image:linear-gradient(to_bottom,black_85%,transparent_100%)]"
+                            priority
                         />
                     </FadeIn>
                 </div>
 
-                <FadeIn delay={0.4}>
-                    <h1 className="heading-hero text-white mb-2 drop-shadow-2xl relative">
-                        <span className="block text-2xl md:text-3xl font-light tracking-[0.5em] text-red-500 mb-2 font-inter">ESTO ES</span>
-                        <span className="relative z-10">EL OLIMPO</span>
-                        {/* Outlined Text behind for depth */}
-                        <span className="absolute top-1 left-1 md:top-2 md:left-2 text-stroke opacity-30 select-none z-[-1]" aria-hidden="true">EL OLIMPO</span>
-                    </h1>
-                </FadeIn>
+
 
                 <FadeIn delay={0.6}>
                     <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto font-light tracking-wide">
