@@ -25,9 +25,9 @@ const About = () => {
                                 {/* Overlay for text readability if needed, though usually better without if image is good */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
 
-                                <div className="absolute bottom-0 left-0 w-full p-6 z-10">
-                                    <span className="text-white font-bold uppercase tracking-widest text-xl block text-shadow-sm">
-                                        Roberto Carrasco N.
+                                <div className="absolute bottom-0 left-0 w-full p-6 z-10 max-w-[75%] md:max-w-full">
+                                    <span className="text-white font-bold uppercase tracking-widest text-xl block text-shadow-sm leading-tight">
+                                        Roberto <br className="block md:hidden" /> Carrasco N.
                                     </span>
                                     <span className="text-sm font-normal text-red-400 mt-1 block">
                                         Entrenador Deportivo
@@ -49,20 +49,25 @@ const About = () => {
                         <h3 className="text-xl text-gray-400 font-light mb-8 uppercase tracking-widest">Entrenador Deportivo</h3>
                     </FadeIn>
                     <FadeIn delay={0.4}>
-                        <p className="text-gray-400 text-lg mb-6 leading-relaxed border-l-4 border-red-600 pl-6">
-                            Mi misión es elevar tu rendimiento físico y mental. Como Entrenador Deportivo titulado de la Universidad de Viña del Mar, combino la ciencia del deporte con la disciplina inquebrantable de la manada.
+                        <p className="text-gray-400 text-base mb-6 leading-relaxed border-l-4 border-red-600 pl-6 text-justify">
+                            Soy Roberto Carrasco, Entrenador Personal con un enfoque en hipertrofia muscular y certificado en Entrenamiento para Mujeres. Mi método va más allá de la estética, busco una transformación integral.
                         </p>
                     </FadeIn>
                     <FadeIn delay={0.5}>
-                        <p className="text-gray-400 text-lg mb-10 leading-relaxed font-light">
-                            Cada plan está diseñado meticulosamente para tu objetivo específico. No existen fórmulas mágicas, solo planificación profesional, nutrición estratégica y trabajo duro.
-                        </p>
+                        <div className="space-y-4 text-gray-400 text-base leading-relaxed font-light text-justify">
+                            <p>
+                                No solo te guiaré para esculpir el cuerpo que sueñas, sino que trabajaremos juntos para instaurar hábitos saludables y fortalecer tu mentalidad. Como tu coach, mi compromiso es ayudarte a romper tus barreras, confiar en tu verdadero potencial y llevarte por el camino de la evolución personal.
+                            </p>
+                            <p className="font-medium text-white">
+                                Deja de ponerte límites. Es hora de entrenar con propósito y conseguir resultados reales.
+                            </p>
+                        </div>
                     </FadeIn>
 
-                    <div className="grid grid-cols-2 gap-8">
+                    <div className="grid grid-cols-2 gap-8 mt-8">
                         <FadeIn delay={0.6}>
                             <div>
-                                <h4 className="text-white font-bold text-3xl mb-1 flex items-baseline gap-1">10<span className="text-red-600 text-lg">+</span></h4>
+                                <h4 className="text-white font-bold text-3xl mb-1 flex items-baseline gap-1">2.5</h4>
                                 <p className="text-gray-500 text-xs uppercase tracking-widest">Años de Experiencia</p>
                             </div>
                         </FadeIn>

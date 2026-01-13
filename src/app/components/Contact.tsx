@@ -10,7 +10,7 @@ const Contact = () => {
 
             <div className="container mx-auto px-4 relative z-10 text-center">
                 <FadeIn>
-                    <h2 className="heading-hero mb-8"><span className="text-stroke">¿LISTO?</span> <br /><span className="text-white">ÚNETE HOY</span></h2>
+                    <h2 className="heading-hero mb-8"><span className="text-white font-black tracking-tighter">¿LISTO?</span> <br /><span className="text-red-600">ÚNETE HOY</span></h2>
                 </FadeIn>
 
                 <FadeIn delay={0.2}>
@@ -26,8 +26,8 @@ const Contact = () => {
                             <div className="space-y-6">
                                 <div>
                                     <input
-                                        type="email"
-                                        placeholder="TU CORREO ELECTRÓNICO"
+                                        type="tel"
+                                        placeholder="TU WHATSAPP"
                                         className="w-full px-6 py-4 bg-black border border-white/10 text-white placeholder-neutral-600 focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 font-bold uppercase tracking-wider text-sm transition-all text-center"
                                     />
                                 </div>
