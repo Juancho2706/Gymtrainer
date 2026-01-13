@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image';
 import FadeIn from './FadeIn';
 
 const About = () => {
@@ -12,13 +13,26 @@ const About = () => {
                 <div className="order-2 md:order-1 relative group">
                     <FadeIn direction="right">
                         <div className="aspect-[3/4] bg-neutral-800 rounded-lg relative overflow-hidden shadow-2xl border border-white/5 group-hover:border-red-600/30 transition-colors duration-500">
-                            <div className="absolute inset-0 bg-neutral-800 flex items-center justify-center">
-                                {/* Abstract Geometric Wolf Element or Placeholder Pattern */}
-                                <div className="w-full h-full opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent" />
-                                <span className="relative z-10 text-neutral-600 font-bold uppercase tracking-widest text-xl text-center px-4">
-                                    Roberto Carrasco N.<br />
-                                    <span className="text-sm font-normal text-neutral-500 mt-2 block">Entrenador Deportivo</span>
-                                </span>
+                            <div className="relative w-full h-full">
+                                <Image
+                                    src="/trainer-portrait.jpeg"
+                                    alt="Roberto Carrasco N. - Entrenador Deportivo"
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    priority
+                                />
+                                {/* Overlay for text readability if needed, though usually better without if image is good */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+
+                                <div className="absolute bottom-0 left-0 w-full p-6 z-10">
+                                    <span className="text-white font-bold uppercase tracking-widest text-xl block text-shadow-sm">
+                                        Roberto Carrasco N.
+                                    </span>
+                                    <span className="text-sm font-normal text-red-400 mt-1 block">
+                                        Entrenador Deportivo
+                                    </span>
+                                </div>
                             </div>
                         </div>
                         {/* Achievement Badge */}

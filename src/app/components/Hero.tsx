@@ -6,20 +6,24 @@ import FadeIn from './FadeIn';
 const Hero = () => {
     return (
         <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
-            {/* KEN BURNS BACKGROUND (Simulating Video) */}
-            <div className="absolute inset-0 z-0">
-                <div className="relative w-full h-full animate-ken-burns">
-                    <Image
-                        src="/hero-cinematic.png"
-                        alt="Cinematic Gym Atmosphere"
-                        fill
-                        className="object-cover opacity-60"
-                        priority
-                    />
-                </div>
+            {/* VIDEO BACKGROUND */}
+            <div className="absolute inset-0 z-0 bg-black">
+                <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover opacity-0 transition-opacity duration-700 ease-in-out"
+                    onLoadedData={(e) => e.currentTarget.classList.remove('opacity-0')}
+                    preload="auto"
+                >
+                    <source src="/hero-optimized.mp4" type="video/mp4" />
+                </video>
+
                 {/* Overlay Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-10" />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80 z-10" />
+
                 {/* Noise Texture Overlay */}
                 <div className="absolute inset-0 opacity-[0.05] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] z-10 pointer-events-none mix-blend-overlay" />
             </div>
