@@ -35,6 +35,11 @@ const Hero = () => {
                 <div className="text-neon-bg absolute inset-0 opacity-10 mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
             </div>
 
+            {/* DESKTOP LOGO - TOP RIGHT OF SECTION */}
+            <div className="hidden md:block absolute top-[5%] right-[2%] w-48 h-48 z-20 pointer-events-none">
+                <Image src="/segundapagina/tow-logo.png" alt="Olympus Wolf Logo" fill className="object-contain" />
+            </div>
+
             {/* CONTENT LAYER */}
             <div className="relative z-10 container mx-auto px-6 h-full flex flex-col justify-center items-center text-center pt-20">
 
@@ -45,6 +50,10 @@ const Hero = () => {
                     transition={{ duration: 1, staggerChildren: 0.1 }}
                     className="mb-6 font-black italic tracking-tighter uppercase text-6xl md:text-8xl lg:text-[9rem] leading-[0.8] text-white mix-blend-exclusion"
                 >
+                    <div className="md:hidden w-80 h-80 mx-auto mb-4 relative opacity-80">
+                        <Image src="/segundapagina/tow-logo.png" alt="Olympus Wolf Logo" fill className="object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]" />
+                    </div>
+
                     <motion.div className="inline-block text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">
                         DOMINA
                     </motion.div>
@@ -110,7 +119,7 @@ const Hero = () => {
 
             {/* SCROLL INDICATOR */}
             <motion.div
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 text-xs tracking-[0.3em] animate-bounce"
+                className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 text-white/50 text-[10px] md:text-xs tracking-[0.3em] animate-bounce hidden md:block"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2 }}
