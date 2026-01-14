@@ -85,7 +85,7 @@ const Footer = () => {
 
                             {/* WhatsApp */}
                             <a
-                                href="https://wa.me/569XXXXXXXX"
+                                href="https://wa.me/56976691584?text=Hola!%20Estoy%20interesado%20en%20contratarte%20como%20mi%20Personal%20Trainer."
                                 target="_blank"
                                 aria-label="WhatsApp"
                                 className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-white hover:text-black transition-all hover:scale-110"

@@ -51,12 +51,14 @@ export default function Navbar() {
                         ))}
                     </div>
 
-                    <Link
-                        href="#contact"
+                    <a
+                        href="https://wa.me/56976691584?text=Hola!%20Estoy%20interesado%20en%20contratarte%20como%20mi%20Personal%20Trainer."
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="hidden md:block bg-neon-red text-onyx px-5 py-2 font-bold text-xs uppercase tracking-widest hover:bg-white hover:scale-105 transition-all w-[140px] text-center rounded-full"
                     >
                         Únete Ahora
-                    </Link>
+                    </a>
 
                     {/* MOBILE MENU TOGGLE */}
                     <button
@@ -114,13 +116,15 @@ export default function Navbar() {
                             transition={{ delay: 0.6 }}
                             className="mt-12"
                         >
-                            <Link
-                                href="#contact"
+                            <a
+                                href="https://wa.me/56976691584?text=Hola!%20Estoy%20interesado%20en%20contratarte%20como%20mi%20Personal%20Trainer."
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="btn-kinetic inline-block scale-125"
                                 onClick={() => setMobileMenuOpen(false)}
                             >
                                 ÚNETE A LA MANADA
-                            </Link>
+                            </a>
                         </motion.div>
                     </motion.div>
                 )}
