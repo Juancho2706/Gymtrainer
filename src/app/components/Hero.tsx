@@ -17,41 +17,44 @@ const Hero = () => {
     return (
         <section id="hero" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-onyx">
 
-            {/* BACKGROUND LAYER */}
-            <div className="absolute inset-0 z-0">
+            {/* BACKGROUND LAYER (Updated for Split Layout) */}
+            <div className="absolute inset-0 md:left-auto md:right-0 md:w-[50%] z-0 bg-onyx border-l border-white/10">
                 <video
                     ref={videoRef}
-                    autoPlay={true}
-                    loop={true}
-                    muted={true}
-                    playsInline={true}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
                     onCanPlay={() => setVideoLoaded(true)}
                     onLoadedData={() => setVideoLoaded(true)}
-                    className={`absolute w-full h-full object-cover grayscale contrast-125 transition-opacity duration-1000 ${videoLoaded ? 'opacity-40' : 'opacity-0'}`}
+                    className={`absolute inset-0 w-full h-full object-cover grayscale contrast-125 transition-opacity duration-1000 ${videoLoaded ? 'opacity-60 md:opacity-80' : 'opacity-0'}`}
                 >
-                    <source src="/segundapagina/VIDEO FINAL.mp4" type="video/mp4" />
+                    <source src="https://res.cloudinary.com/diaykldqz/video/upload/ac_none,q_auto,f_auto/final-aa-optimized_bsrtvj.mp4" type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-gradient-to-t from-onyx via-onyx/50 to-transparent"></div>
+
+                {/* Overlays */}
+                <div className="absolute inset-0 bg-gradient-to-t from-onyx via-transparent to-transparent md:hidden"></div> {/* Only fade bottom on mobile */}
+                <div className="absolute inset-0 bg-onyx/20 md:bg-transparent"></div> {/* Darken mobile video */}
                 <div className="text-neon-bg absolute inset-0 opacity-10 mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
             </div>
 
-            {/* DESKTOP LOGO - TOP RIGHT OF SECTION */}
-            <div className="hidden md:block absolute top-[5%] right-[2%] w-48 h-48 z-20 pointer-events-none">
-                <Image src="/segundapagina/tow-logo.png" alt="Olympus Wolf Logo" fill className="object-contain" />
+            {/* DESKTOP LOGO - TOP RIGHT OF SECTION (Adjusted for split) */}
+            <div className="hidden md:block absolute top-[5%] right-[2%] w-32 h-32 z-20 pointer-events-none opacity-50">
+                <Image src="/tow-logo.png" alt="Olympus Wolf Logo" fill className="object-contain" />
             </div>
 
             {/* CONTENT LAYER */}
-            <div className="relative z-10 container mx-auto px-6 h-full flex flex-col justify-center items-center text-center pt-20">
+            <div className="relative z-10 container mx-auto px-6 h-full flex flex-col justify-center items-center md:items-start text-center md:text-left pt-20">
 
                 {/* KINETIC TITLE */}
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, staggerChildren: 0.1 }}
-                    className="mb-6 font-black italic tracking-tighter uppercase text-6xl md:text-8xl lg:text-[9rem] leading-[0.8] text-white mix-blend-exclusion"
+                    className="mb-6 font-black italic tracking-tighter uppercase text-6xl md:text-8xl lg:text-[8rem] leading-[0.8] text-white mix-blend-exclusion"
                 >
                     <div className="md:hidden w-80 h-80 mx-auto mb-4 relative opacity-80">
-                        <Image src="/segundapagina/tow-logo.png" alt="Olympus Wolf Logo" fill className="object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]" />
+                        <Image src="/tow-logo.png" alt="Olympus Wolf Logo" fill className="object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]" />
                     </div>
 
                     <motion.div className="inline-block text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">
@@ -74,7 +77,7 @@ const Hero = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1, duration: 1 }}
-                    className="max-w-xl text-lg md:text-2xl text-gray-300 font-medium tracking-widest uppercase mb-12 border-l-4 border-neon-red pl-6 text-left"
+                    className="max-w-xl text-lg md:text-2xl text-gray-300 font-medium tracking-widest uppercase mb-12 border-l-4 border-neon-red pl-6"
                 >
                     No excusas. Solo resultados puros.
                     <br />

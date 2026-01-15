@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: "Olympus Wolf",
     images: [
       {
-        url: "/segundapagina/trainer-portrait.jpeg",
+        url: "/trainer-portrait.jpeg",
         width: 1200,
         height: 630,
         alt: "Roberto - Head Coach Olympus Wolf",

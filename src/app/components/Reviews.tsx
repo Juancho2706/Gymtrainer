@@ -7,49 +7,49 @@ const reviews = [
     {
         name: "Carlos M.",
         role: "HÍBRIDO",
-        image: "/segundapagina/review-new-1.png",
+        image: "/review-new-1.png",
         quote: "Llevaba años estancado. Roberto no te regala nada, pero si haces caso, cambias. Bajé 8kg de grasa y subí mis básicos.",
         stars: 5,
     },
     {
         name: "Valentina R.",
         role: "CAMBIO",
-        image: "/segundapagina/review-new-2.png",
+        image: "/review-new-2.png",
         quote: "Me daba miedo ponerme 'grande' con las pesas. Nada que ver. Me veo más tonificada que nunca. La dieta es súper llevadera.",
         stars: 5,
     },
     {
         name: "Javier S.",
         role: "FUERZA",
-        image: "/segundapagina/review-new-3.png",
+        image: "/review-new-3.png",
         quote: "El ambiente del team es otra cosa. No es solo ir a levantar fierros, es la mentalidad. Mis sentadillas subieron 20kg en un mes.",
         stars: 4,
     },
     {
         name: "Sofia L.",
         role: "CROSSFIT",
-        image: "/segundapagina/review-new-4.png",
+        image: "/review-new-4.png",
         quote: "Sufrí en cada entreno, no voy a mentir jajaja. Pero ver los abs por primera vez vale cada gota de sudor. Recomendadísimo.",
         stars: 5,
     },
     {
         name: "Diego A.",
         role: "POWERLIFTING",
-        image: "/segundapagina/review-new-5.png",
+        image: "/review-new-5.png",
         quote: "Buscaba algo serio, sin tonterías de influencers. Aquí se viene a entrenar de verdad. La técnica que enseña es impecable.",
         stars: 5,
     },
     {
         name: "Camila V.",
         role: "RUNNING",
-        image: "/segundapagina/review-new-6.png",
+        image: "/review-new-6.png",
         quote: "Empecé de cero, literal no podía hacer una flexión. Ahora hago dominadas. Me siento poderosa. Gracias coach!",
         stars: 4,
     },
     {
         name: "Matias P.",
         role: "CALISTENIA",
-        image: "/segundapagina/review-new-7.png",
+        image: "/review-new-7.png",
         quote: "La periodización es clave. Siempre llegaba quemado al gym, ahora entreno inteligente. Los resultados hablan solos.",
         stars: 5,
     }
@@ -107,13 +107,13 @@ const Reviews = () => {
 
             <div className="container mx-auto px-6 mb-20 flex flex-col items-center text-center relative z-10">
                 <div className="md:hidden w-56 h-56 mb-6 relative opacity-100">
-                    <Image src="/segundapagina/tow-logo.png" alt="Olympus Wolf Logo" fill className="object-contain" />
+                    <Image src="/tow-logo.png" alt="Olympus Wolf Logo" fill className="object-contain" />
                 </div>
 
                 {/* DESKTOP LOGO IN WHITESPACE */}
                 <div className="hidden md:flex justify-center items-center w-72 h-72 mb-8 relative">
                     <div className="relative w-full h-full z-10">
-                        <Image src="/segundapagina/tow-logo.png" alt="Olympus Wolf Logo" fill className="object-contain" />
+                        <Image src="/tow-logo.png" alt="Olympus Wolf Logo" fill className="object-contain" />
                     </div>
                 </div>
 

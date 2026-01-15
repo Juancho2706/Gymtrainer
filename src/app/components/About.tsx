@@ -75,7 +75,7 @@ const About = () => {
                         <div className="absolute inset-0 bg-neutral-900" ref={imageRef}>
                             <motion.div style={{ filter: grayscale }} className="w-full h-full relative">
                                 <Image
-                                    src="/segundapagina/trainer-portrait.jpeg"
+                                    src="/trainer-portrait.jpeg"
                                     alt="Roberto Carrasco - Entrenador"
                                     fill
                                     className="object-cover"
