@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Olympus Wolf Protocol
 
-## Getting Started
+Web oficial para el servicio de entrenamiento personalizado de élite "Olympus Wolf".
 
-First, run the development server:
+## Descripción del Proyecto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Este sitio web representa la identidad digital de la marca Olympus Wolf. Más que un simple portafolio, es una experiencia inmersiva diseñada para transmitir la intensidad, la disciplina y los resultados del método de entrenamiento.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+El objetivo principal es captar la atención de usuarios comprometidos con su transformación física y mental, guiándolos a través de una narrativa visual impactante hacia la contratación de planes de entrenamiento.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Diseño y Experiencia Visual
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+El diseño general sigue una línea estética moderna y agresiva denominada **"Kinetic Future"**. Se prioriza el impacto visual y la fluidez de movimiento para reflejar la energía del entrenamiento deportivo de alto rendimiento.
 
-## Learn More
+**Pilares del Diseño:**
 
-To learn more about Next.js, take a look at the following resources:
+*   **Paleta de Colores:** Se utiliza un fondo oscuro profundo ("Onyx") para crear una atmósfera premium y seria, contrastado con acentos en **Rojo Neón** que evocan energía, alerta y pasión.
+*   **Tipografía:** Fuentes grandes, itálicas y en mayúsculas para transmitir velocidad, fuerza y determinación.
+*   **Multimedia:** Uso estratégico de video vertical de alta calidad y fotografía profesional para mostrar resultados reales y la calidad técnica del entrenador.
+*   **Animaciones:** Elementos que reaccionan al movimiento y al desplazamiento (scroll) del usuario, manteniendo la navegación dinámica e interesante sin saturar la vista.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Estructura de la Web
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+La navegación es lineal, simple y directa, dividida en cuatro secciones clave:
 
-## Deploy on Vercel
+1.  **Inicio (Domina tu Realidad):** Impacto inmediato con video en alta definición que establece el tono de la marca desde el primer segundo.
+2.  **Filosofía (The Mind Behind):** Presentación del entrenador Roberto Carrasco, destacando su experiencia profesional y su enfoque en la hipertrofia y la mentalidad.
+3.  **Arsenal (Servicios):** Catálogo claro de los planes de entrenamiento disponibles (Presencial, Online, Híbrido), diferenciados visualmente por nivel de compromiso.
+4.  **Officers (Testimonios):** Evidencia social presentada como "fichas de elite", validando el método con casos de éxito reales y citas de alumnos.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Tecnología y Rendimiento
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Aunque el sitio es visualmente rico, se ha optimizado para garantizar una experiencia fluida:
+
+*   **Carga Rápida:** Los videos e imágenes de alta resolución se gestionan mediante servicios en la nube (Cloudinary) para asegurar que se reproduzcan instantáneamente y con la máxima calidad, sin consumir datos excesivos del usuario.
+*   **Adaptabilidad:** El diseño responde de manera inteligente al dispositivo del usuario, ofreciendo una experiencia de pantalla completa en móviles y un diseño editorial estructurado en computadoras de escritorio.
+*   **Contacto Directo:** Integración fluida con WhatsApp para facilitar la comunicación inmediata entre el potencial alumno y el entrenador.
+
+---
+© 2026 Olympus Wolf. Todos los derechos reservados.
