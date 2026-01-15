@@ -37,4 +37,18 @@ Aunque el sitio es visualmente rico, se ha optimizado para garantizar una experi
 *   **Contacto Directo:** Integración fluida con WhatsApp para facilitar la comunicación inmediata entre el potencial alumno y el entrenador.
 
 ---
+
+## Desarrollado por
+
+**Juan Villegas** - *Frontend Developer*
+
+## Notas del Desarrollador (Opinión Personal)
+
+Honestamente, disfruté mucho construyendo este proyecto. Quería salirme un poco de lo típico que se ve en webs de gimnasios (que suelen ser genéricas) y probar algo con más carácter.
+
+Lo que más me gustó fue lograr ese balance entre que se vea "agresivo" y moderno, pero que siga siendo súper rápido de cargar. El tema del video en el hero fue un reto interesante para que no pesara una tonelada, pero al final con la integración en la nube quedó volando.
+
+Siento que logramos una identidad visual muy sólida, esa mezcla de oscuro con neón y tipografías grandes le da una personalidad única. No es solo una web informativa, te mete en la "película" de entrenar duro desde que entras.
+
+---
 © 2026 Olympus Wolf. Todos los derechos reservados.
