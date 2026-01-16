@@ -99,7 +99,7 @@ const Footer = () => {
                 {/* BOTTOM CREDIT */}
                 <div className="border-t border-white/5 bg-black py-4 text-center">
                     <p className="text-[10px] text-gray-700 font-mono uppercase tracking-widest">
-                        Hecho por webdevjv
+                        Hecho por <a href="https://www.webdevjv.com" target="_blank" rel="noopener noreferrer" className="hover:text-neon-red transition-colors">webdevjv</a>
                     </p>
                 </div>
             </div>
