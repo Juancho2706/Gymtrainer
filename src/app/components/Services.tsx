@@ -11,7 +11,7 @@ const Services = () => {
     const prices = [
         {
             title: "MEDIUM",
-            price: "$130.000",
+            price: "$150.000",
             features: ["PLAN + DIETA", "COACHING 24/7"],
             details: "PACK COMPLETO. ENTRENAMIENTO Y NUTRICIÓN.",
             highlight: true,
@@ -19,21 +19,21 @@ const Services = () => {
         },
         {
             title: "ONLINE",
-            price: "$35.000",
+            price: "$40.000",
             features: ["PLAN PDF", "DUDAS ONLINE"],
             details: "GUÍA ESTRUCTURADA. SIN SEGUIMIENTO.",
             highlight: false
         },
         {
             title: "BASIC",
-            price: "$80.000",
+            price: "$90.000",
             features: ["COACHING 24/7", "AJUSTES MENSUALES"],
             details: "SEGUIMIENTO WHATSAPP. SIN NUTRICIÓN.",
             highlight: false
         },
         {
             title: "FULL PRO",
-            price: "$180.000",
+            price: "$200.000",
             features: ["PRESENCIAL 1:1", "DIETA", "ELITE"],
             details: "EXPERIENCIA TOTAL. CORRECCIÓN IN SITU.",
             highlight: false,
